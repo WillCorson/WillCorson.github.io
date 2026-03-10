@@ -56,17 +56,6 @@ function Loader() {
 export default function Home() {
   const[currentSlide, setCurrentSlide] = useState(0);
 
-  // Auto-advance carousel (Commented out: usually you want auto-advance OFF for 3D models 
-  // so the user has time to drag, rotate, and interact with the model without it switching)
-  /*
-  useEffect(() => {
-    const timer = setInterval(() => {
-      nextSlide();
-    }, 8000); 
-    return () => clearInterval(timer);
-  }, [currentSlide]);
-  */
-
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === GALLERY_IMAGES.length - 1 ? 0 : prev + 1));
   };

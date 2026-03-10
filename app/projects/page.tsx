@@ -1,13 +1,17 @@
 "use client";
-
+import { useState, useEffect, Suspense } from "react";
+import { Canvas, useLoader } from "@react-three/fiber";
+import { OrbitControls, Stage, Html, useProgress } from "@react-three/drei";
+import { STLLoader } from "three-stdlib";
 import * as React from "react";
-import { ExternalLink, Github, LayoutList, CalendarClock, CheckCircle2, Box, X } from "lucide-react";
+import { ExternalLink, Github, LayoutList, CalendarClock, CheckCircle2, Box, X, ChevronRight, ChevronLeft, Loader } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"; 
+import ProjectMediaPlaceholder from "@/components/ProjectMediaPlaceholder";
 
 // --- 1. Types ---
 interface Project {
@@ -17,86 +21,159 @@ interface Project {
   description: string;
   tech: string[];
   links: {
-    github: string;
     demo?: string;
   };
+  stls: string[],
+  stlCarousel: boolean;
 }
 
 // --- 2. Data ---
 const PROJECTS: Project[] = [
   {
-    title: "Cincinnati Childrens",
+    title: "3D Modeled Prop Swords",
     year: "2025",
     category: "3D Printing & Design",
     description: "A centralized dashboard for monitoring cloud infrastructure security posture. Implements RBAC and real-time threat detection using AWS GuardDuty integration.",
     tech: ["Next.js", "TypeScript", "AWS", "Tailwind"],
-    links: { github: "#", demo: "#" }
+    links: { demo: "#" },
+    stls: ["/STL/EnmaExploded.stl", "/STL/EnmaGuardHole.stl", "/STL/FrierenStaff.stl", "/STL/hornets.stl", "/STL/trueShikaiQuincy.stl", "/STL/trueShikaiQuincyExploded.stl"],
+    stlCarousel: true
   },
   {
-    title: "1819 Innovation Hub Makerspace",
-    year: "2024",
+    title: "Custom Childrens Ear Molds",
+    year: "2025",
     category: "Design & Prototyping",
     description: "Developed a lightweight mutual authentication protocol for resource-constrained IoT devices, reducing handshake latency by 40% compared to standard TLS.",
     tech: ["C++", "Python", "MQTT", "Raspberry Pi"],
-    links: { github: "#" }
+    links: { demo: "#" },
+    stls: ["/STL/FrierenStaff.stl"],
+    stlCarousel: false
   },
   {
-    title: "Mitsubishi Electric Automotive",
-    year: "2023",
+    title: "Custom Syringe Cap",
+    year: "2025",
     category: "Design & Automation",
     description: "Refactored a monolithic legacy application into scalable microservices using Docker and Kubernetes. Improved system uptime to 99.9%.",
     tech: ["Go", "Docker", "Kubernetes", "PostgreSQL"],
-    links: { github: "#", demo: "#" }
+    links: { demo: "#" },
+    stls: ["/STL/hornets.stl", "/STL/hornetsPins.stl"],
+    stlCarousel: false
   },
   {
-    title: "Commissions",
+    title: "Stethoscope Teaching Kit",
     year: "2025",
     category: "Design & 3D Printing",
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
-    links: { github: "#" }
+    links: { demo: "#" },
+    stls: ["/STL/trueShikaiQuincy.stl", "/STL/trueShikaiQuincyExploded.stl"],
+    stlCarousel: false
   },
   {
-    title: "Personal Project 1",
+    title: "Coverslip Holder",
+    year: "2025",
+    category: "Design & 3D Printing",
+    description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    links: { demo: "#" },
+    stls: [],
+    stlCarousel: false
+  },
+  {
+    title: "3D Printed PVC Staff Prop",
     year: "2024",
     category: "Design & 3D Printing",
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
-    links: { github: "#" }
+    links: { demo: "#" },
+    stls: [],
+    stlCarousel: false
   },
   {
-    title: "Personal Project 2",
+    title: "Laser Cut Lake Erie Islands Topographical Map",
+    year: "2024",
+    category: "Design & 3D Printing",
+    description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    links: { demo: "#" },
+    stls: [],
+    stlCarousel: false
+  },
+  {
+    title: "Brainwave Reactive Sword",
     year: "2023",
     category: "Design & 3D Printing",
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
-    links: { github: "#" }
-  }
+    links: { demo: "#" },
+    stls: [],
+    stlCarousel: false
+  },
+  {
+    title: "Functioning Transforming Nerf Gun",
+    year: "2023",
+    category: "Design & 3D Printing",
+    description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    links: { demo: "#" },
+    stls: [],
+    stlCarousel: false
+  },
+  {
+    title: "3d Modeled Bike Assembly",
+    year: "2022",
+    category: "Design & 3D Printing",
+    description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    links: { demo: "#" },
+    stls: [],
+    stlCarousel: false
+  },
+  {
+    title: "Lego EV3 Project #2",
+    year: "2022",
+    category: "Design & 3D Printing",
+    description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    links: { demo: "#" },
+    stls: [],
+    stlCarousel: false
+  },
+  {
+    title: "Model Engine",
+    year: "2022",
+    category: "Design & 3D Printing",
+    description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    links: { demo: "#" },
+    stls: [],
+    stlCarousel: false
+  },
+  {
+    title: "Lego EV3 Project #1",
+    year: "2021",
+    category: "Design & 3D Printing",
+    description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    links: { demo: "#" },
+    stls: [],
+    stlCarousel: false
+  },
+  {
+    title: "3d Printed Model Rocket",
+    year: "2020",
+    category: "Design & 3D Printing",
+    description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    links: { demo: "#" },
+    stls: [],
+    stlCarousel: false
+  },
+
+  
 ];
 
-// --- 3. Helper Component: Placeholder for Three.js/STL ---
-const ProjectMediaPlaceholder = ({ title }: { title: string }) => {
-  return (
-    <div className="w-full h-64 bg-slate-50 rounded-lg border-2 border-dashed border-slate-300 flex flex-col items-center justify-center gap-3 text-slate-400 mt-4 mb-6">
-      <div className="p-3 bg-white rounded-full shadow-sm">
-        <Box className="w-8 h-8 text-blue-500" />
-      </div>
-      <div className="text-center">
-        <p className="font-medium text-sm">3D Viewer / STL Area</p>
-        <p className="text-xs">Media for: {title}</p>
-      </div>
-      {/* 
-        TODO: Insert your Three.js Canvas here.
-        Example: 
-        <Canvas>
-           <Stage>
-             <Model url={project.stlUrl} />
-           </Stage>
-        </Canvas>
-      */}
-    </div>
-  );
-};
+
 
 // --- 4. Main Component ---
 export default function Projects() {
@@ -242,7 +319,7 @@ export default function Projects() {
                   <div className="pt-2 border-t border-gray-100 mt-2">
                     
                     {/* 3D/Image Area added to List View */}
-                    <ProjectMediaPlaceholder title={project.title} />
+                    <ProjectMediaPlaceholder stls={project.stls} />
 
                     <p className="mb-4">{project.description}</p>
                     
@@ -255,9 +332,6 @@ export default function Projects() {
                     </div>
 
                     <div className="flex gap-4">
-                      <a href={project.links.github} className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-blue-600">
-                        <Github className="w-4 h-4" /> View Code
-                      </a>
                       {project.links.demo && (
                         <a href={project.links.demo} className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-blue-600">
                           <ExternalLink className="w-4 h-4" /> Live Demo
@@ -299,7 +373,7 @@ export default function Projects() {
               <div className="p-6 overflow-y-auto max-h-[70vh]">
                 
                 {/* 3D / Image Viewer Area */}
-                <ProjectMediaPlaceholder title={selectedProject.title} />
+                <ProjectMediaPlaceholder stls={selectedProject.stls} />
 
                 <div className="prose max-w-none">
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">About this project</h4>
@@ -322,14 +396,6 @@ export default function Projects() {
                    
                    <div className="pt-4 mt-2 border-t border-gray-100">
                       <div className="flex gap-4">
-                        <a 
-                          href={selectedProject.links.github} 
-                          target="_blank" 
-                          rel="noreferrer"
-                          className="btn btn-outline btn-sm gap-2 normal-case"
-                        >
-                          <Github className="w-4 h-4" /> View Code
-                        </a>
                         {selectedProject.links.demo && (
                           <a 
                             href={selectedProject.links.demo} 
