@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, Suspense, useRef } from "react";
 import { Canvas, useLoader } from "@react-three/fiber";
 import { OrbitControls, Stage, Html, useProgress } from "@react-three/drei";
 import { STLLoader } from "three-stdlib";
@@ -11,7 +11,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"; 
-import ProjectMediaPlaceholder from "@/components/ProjectMediaPlaceholder";
+import STLModelDisplay from "@/components/STLModelDisplay";
+import PhotoCarouselDisplay from "@/components/PhotoCarouselDisplay"; // <-- Added Import
 
 // --- 1. Types ---
 interface Project {
@@ -23,20 +24,20 @@ interface Project {
   links: {
     demo?: string;
   };
-  stls: string[],
+  displayFiles: string[];
   stlCarousel: boolean;
 }
 
 // --- 2. Data ---
-const PROJECTS: Project[] = [
+const PROJECTS: Project[] =[
   {
     title: "3D Modeled Prop Swords",
     year: "2025",
     category: "3D Printing & Design",
     description: "A centralized dashboard for monitoring cloud infrastructure security posture. Implements RBAC and real-time threat detection using AWS GuardDuty integration.",
-    tech: ["Next.js", "TypeScript", "AWS", "Tailwind"],
+    tech:["Next.js", "TypeScript", "AWS", "Tailwind"],
     links: { demo: "#" },
-    stls: ["/STL/EnmaExploded.stl", "/STL/EnmaGuardHole.stl", "/STL/FrierenStaff.stl", "/STL/hornets.stl", "/STL/trueShikaiQuincy.stl", "/STL/trueShikaiQuincyExploded.stl"],
+    displayFiles:["/STL/EnmaExploded.stl", "/STL/EnmaGuardHole.stl", "/STL/FrierenStaff.stl", "/STL/hornets.stl", "/STL/trueShikaiQuincy.stl", "/STL/trueShikaiQuincyExploded.stl"],
     stlCarousel: true
   },
   {
@@ -44,9 +45,9 @@ const PROJECTS: Project[] = [
     year: "2025",
     category: "Design & Prototyping",
     description: "Developed a lightweight mutual authentication protocol for resource-constrained IoT devices, reducing handshake latency by 40% compared to standard TLS.",
-    tech: ["C++", "Python", "MQTT", "Raspberry Pi"],
+    tech:["C++", "Python", "MQTT", "Raspberry Pi"],
     links: { demo: "#" },
-    stls: ["/STL/FrierenStaff.stl"],
+    displayFiles: ["/STL/FrierenStaff.stl"], // Change to image extensions when ready
     stlCarousel: false
   },
   {
@@ -54,9 +55,9 @@ const PROJECTS: Project[] = [
     year: "2025",
     category: "Design & Automation",
     description: "Refactored a monolithic legacy application into scalable microservices using Docker and Kubernetes. Improved system uptime to 99.9%.",
-    tech: ["Go", "Docker", "Kubernetes", "PostgreSQL"],
+    tech:["Go", "Docker", "Kubernetes", "PostgreSQL"],
     links: { demo: "#" },
-    stls: ["/STL/hornets.stl", "/STL/hornetsPins.stl"],
+    displayFiles: ["/STL/hornets.stl", "/STL/hornetsPins.stl"], // Change to image extensions when ready
     stlCarousel: false
   },
   {
@@ -64,9 +65,9 @@ const PROJECTS: Project[] = [
     year: "2025",
     category: "Design & 3D Printing",
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
-    tech: ["HTML", "CSS", "JavaScript"],
+    tech:["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    stls: ["/STL/trueShikaiQuincy.stl", "/STL/trueShikaiQuincyExploded.stl"],
+    displayFiles:["/STL/trueShikaiQuincy.stl", "/STL/trueShikaiQuincyExploded.stl"], // Change to image extensions when ready
     stlCarousel: false
   },
   {
@@ -76,7 +77,7 @@ const PROJECTS: Project[] = [
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    stls: [],
+    displayFiles:[],
     stlCarousel: false
   },
   {
@@ -86,7 +87,7 @@ const PROJECTS: Project[] = [
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    stls: [],
+    displayFiles:[],
     stlCarousel: false
   },
   {
@@ -96,7 +97,7 @@ const PROJECTS: Project[] = [
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    stls: [],
+    displayFiles:[],
     stlCarousel: false
   },
   {
@@ -106,7 +107,7 @@ const PROJECTS: Project[] = [
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    stls: [],
+    displayFiles:[],
     stlCarousel: false
   },
   {
@@ -116,7 +117,7 @@ const PROJECTS: Project[] = [
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    stls: [],
+    displayFiles:[],
     stlCarousel: false
   },
   {
@@ -126,7 +127,7 @@ const PROJECTS: Project[] = [
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    stls: [],
+    displayFiles:[],
     stlCarousel: false
   },
   {
@@ -134,9 +135,9 @@ const PROJECTS: Project[] = [
     year: "2022",
     category: "Design & 3D Printing",
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
-    tech: ["HTML", "CSS", "JavaScript"],
+    tech:["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    stls: [],
+    displayFiles:[],
     stlCarousel: false
   },
   {
@@ -146,7 +147,7 @@ const PROJECTS: Project[] = [
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    stls: [],
+    displayFiles:[],
     stlCarousel: false
   },
   {
@@ -154,9 +155,9 @@ const PROJECTS: Project[] = [
     year: "2021",
     category: "Design & 3D Printing",
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
-    tech: ["HTML", "CSS", "JavaScript"],
+    tech:["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    stls: [],
+    displayFiles:[],
     stlCarousel: false
   },
   {
@@ -164,16 +165,12 @@ const PROJECTS: Project[] = [
     year: "2020",
     category: "Design & 3D Printing",
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
-    tech: ["HTML", "CSS", "JavaScript"],
+    tech:["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    stls: [],
+    displayFiles:[],
     stlCarousel: false
   },
-
-  
 ];
-
-
 
 // --- 4. Main Component ---
 export default function Projects() {
@@ -232,20 +229,14 @@ export default function Projects() {
           /* --- DAISYUI TIMELINE --- */
           <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
             {PROJECTS.map((project, index) => {
-              // Determine alignment based on index (even = title on start, odd = title on end)
               const isEven = index % 2 === 0;
               
               return (
                 <li key={index}>
                   {index !== 0 && <hr className="bg-gray-200" />}
 
-                  {/* 
-                     SLOT 1: TIMELINE START
-                     If Even: Show Title. If Odd: Show Date.
-                  */}
                   <div className="timeline-start mb-10 md:mb-0 px-4 w-full md:w-1/2 flex flex-col justify-center md:items-end">
                     {isEven ? (
-                       // Title (Clickable)
                       <button 
                         onClick={() => handleProjectClick(project)}
                         className="text-xl cursor-pointer font-black text-gray-900 hover:text-blue-600 transition-colors text-right w-full"
@@ -253,7 +244,6 @@ export default function Projects() {
                         {project.title}
                       </button>
                     ) : (
-                      // Date/Meta
                       <div className="flex flex-col items-end w-full">
                         <time className="font-mono italic text-gray-500">{project.year}</time>
                         <div className="text-sm font-bold text-gray-400 mt-1">{project.category}</div>
@@ -261,26 +251,19 @@ export default function Projects() {
                     )}
                   </div>
 
-                  {/* MIDDLE ICON */}
                   <div className="timeline-middle">
                     <div className="w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center ring-4 ring-white">
                       <CheckCircle2 className="w-3 h-3 text-white" />
                     </div>
                   </div>
 
-                  {/* 
-                     SLOT 2: TIMELINE END
-                     If Even: Show Date. If Odd: Show Title.
-                  */}
                   <div className="timeline-end mb-10 px-4 w-full md:w-1/2 flex flex-col justify-center md:items-start">
                      {isEven ? (
-                       // Date/Meta
                        <div className="flex flex-col items-start w-full">
                         <time className="font-mono italic text-gray-500">{project.year}</time>
                         <div className="text-sm font-bold text-gray-400 mt-1">{project.category}</div>
                       </div>
                      ) : (
-                       // Title (Clickable)
                        <button 
                         onClick={() => handleProjectClick(project)}
                         className="text-xl cursor-pointer font-black text-gray-900 hover:text-blue-600 transition-colors text-left w-full"
@@ -318,8 +301,16 @@ export default function Projects() {
                 <AccordionContent className="pb-4 text-gray-600">
                   <div className="pt-2 border-t border-gray-100 mt-2">
                     
-                    {/* 3D/Image Area added to List View */}
-                    <ProjectMediaPlaceholder stls={project.stls} />
+                    {/* ACCORDION: Conditional 3D/Image Area */}
+                    {project.displayFiles?.length > 0 && (
+                      <div className="mb-6 mt-4">
+                        {project.stlCarousel ? (
+                          <STLModelDisplay stls={project.displayFiles} />
+                        ) : (
+                          <PhotoCarouselDisplay photos={project.displayFiles} />
+                        )}
+                      </div>
+                    )}
 
                     <p className="mb-4">{project.description}</p>
                     
@@ -362,7 +353,6 @@ export default function Projects() {
                     </div>
                  </div>
                  <form method="dialog">
-                    {/* if there is a button in form, it will close the modal */}
                     <button onClick={handleCloseModal} className="btn btn-sm btn-circle btn-ghost text-gray-500">
                       <X className="w-5 h-5" />
                     </button>
@@ -372,8 +362,16 @@ export default function Projects() {
               {/* Modal Content */}
               <div className="p-6 overflow-y-auto max-h-[70vh]">
                 
-                {/* 3D / Image Viewer Area */}
-                <ProjectMediaPlaceholder stls={selectedProject.stls} />
+                {/* MODAL: Conditional 3D / Image Viewer Area */}
+                {selectedProject.displayFiles?.length > 0 && (
+                  <div className="mb-6">
+                    {selectedProject.stlCarousel ? (
+                      <STLModelDisplay stls={selectedProject.displayFiles} />
+                    ) : (
+                      <PhotoCarouselDisplay photos={selectedProject.displayFiles} />
+                    )}
+                  </div>
+                )}
 
                 <div className="prose max-w-none">
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">About this project</h4>
