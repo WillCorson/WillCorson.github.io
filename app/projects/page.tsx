@@ -47,7 +47,7 @@ const PROJECTS: Project[] =[
     description: "Developed a lightweight mutual authentication protocol for resource-constrained IoT devices, reducing handshake latency by 40% compared to standard TLS.",
     tech:["C++", "Python", "MQTT", "Raspberry Pi"],
     links: { demo: "#" },
-    displayFiles: ["/STL/FrierenStaff.stl"], // Change to image extensions when ready
+    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
     stlCarousel: false
   },
   {
@@ -57,7 +57,7 @@ const PROJECTS: Project[] =[
     description: "Refactored a monolithic legacy application into scalable microservices using Docker and Kubernetes. Improved system uptime to 99.9%.",
     tech:["Go", "Docker", "Kubernetes", "PostgreSQL"],
     links: { demo: "#" },
-    displayFiles: ["/STL/hornets.stl", "/STL/hornetsPins.stl"], // Change to image extensions when ready
+    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
     stlCarousel: false
   },
   {
@@ -67,7 +67,7 @@ const PROJECTS: Project[] =[
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech:["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    displayFiles:["/STL/trueShikaiQuincy.stl", "/STL/trueShikaiQuincyExploded.stl"], // Change to image extensions when ready
+    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
     stlCarousel: false
   },
   {
@@ -77,7 +77,7 @@ const PROJECTS: Project[] =[
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    displayFiles:[],
+    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
     stlCarousel: false
   },
   {
@@ -87,7 +87,7 @@ const PROJECTS: Project[] =[
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    displayFiles:[],
+    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
     stlCarousel: false
   },
   {
@@ -97,7 +97,7 @@ const PROJECTS: Project[] =[
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    displayFiles:[],
+    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
     stlCarousel: false
   },
   {
@@ -107,7 +107,7 @@ const PROJECTS: Project[] =[
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    displayFiles:[],
+    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
     stlCarousel: false
   },
   {
@@ -117,7 +117,7 @@ const PROJECTS: Project[] =[
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    displayFiles:[],
+    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
     stlCarousel: false
   },
   {
@@ -127,7 +127,7 @@ const PROJECTS: Project[] =[
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    displayFiles:[],
+    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
     stlCarousel: false
   },
   {
@@ -137,7 +137,7 @@ const PROJECTS: Project[] =[
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech:["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    displayFiles:[],
+    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
     stlCarousel: false
   },
   {
@@ -147,7 +147,7 @@ const PROJECTS: Project[] =[
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech: ["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    displayFiles:[],
+    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
     stlCarousel: false
   },
   {
@@ -157,7 +157,7 @@ const PROJECTS: Project[] =[
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech:["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    displayFiles:[],
+    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
     stlCarousel: false
   },
   {
@@ -167,7 +167,7 @@ const PROJECTS: Project[] =[
     description: "My first personal portfolio built to showcase early academic projects. Focused on accessibility and semantic HTML.",
     tech:["HTML", "CSS", "JavaScript"],
     links: { demo: "#" },
-    displayFiles:[],
+    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
     stlCarousel: false
   },
 ];
