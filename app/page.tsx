@@ -16,27 +16,9 @@ import { useState, useEffect, Suspense } from "react";
 import { Canvas, useLoader } from "@react-three/fiber";
 import { OrbitControls, Stage, Html, useProgress } from "@react-three/drei";
 import { STLLoader } from "three-stdlib";
+import PhotoCarouselDisplay from "@/components/PhotoCarouselDisplay";
 
-const GALLERY_IMAGES =[
-  "/STL/EnmaExploded.stl",
-  "/STL/EnmaGuardHole.stl",
-  "/STL/FrierenStaff.stl",
-  "/STL/hornets.stl",
-  "/STL/hornetsPins.stl",
-  "/STL/trueShikaiQuincy.stl",
-  "/STL/trueShikaiQuincyExploded.stl",
-];
-
-// Sub-component to load and render the STL file
-function STLModel({ url }: { url: string }) {
-  const geometry = useLoader(STLLoader, url);
-  return (
-    <mesh geometry={geometry}>
-      {/* You can change the color/material of the STL here */}
-      <meshStandardMaterial color="#94a3b8" roughness={0.4} metalness={0.6} />
-    </mesh>
-  );
-}
+const photos: string[] = ["/file.svg", "/globe.svg", "/next.svg"];
 
 // Sub-component to show a loading spinner while the STL fetches
 function Loader() {
@@ -57,11 +39,11 @@ export default function Home() {
   const[currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === GALLERY_IMAGES.length - 1 ? 0 : prev + 1));
+    setCurrentSlide((prev) => (prev === photos.length - 1 ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? GALLERY_IMAGES.length - 1 : prev - 1));
+    setCurrentSlide((prev) => (prev === 0 ? photos.length - 1 : prev - 1));
   };
 
   return (
@@ -69,76 +51,19 @@ export default function Home() {
       
       {/* --- SECTION 1: CENTERED NAME/HEADER --- */}
       <div className="text-center mb-12">
-        <p className="text-xl text-gray-500 mt-4 font-medium uppercase tracking-widest">
+        <p className="text-xl text-gray-500 mt-4 font-semibold uppercase tracking-widest">
           William Corson
         </p>
       </div>
 
-      {/* --- SECTION 2: GRID (GALLERY | PROFILE) --- */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
-        
-        {/* LEFT COLUMN: 3D STL Carousel */}
-        <div className="w-full order-2 lg:order-1">
-          <div className="relative aspect-video bg-gray-100 rounded-xl overflow-hidden shadow-lg border border-gray-200 group cursor-grab active:cursor-grabbing">
-            
-            {/* 3D Canvas Display */}
-            <div className="w-full h-full relative z-0">
-               <Canvas camera={{ position:[0, 0, 5], fov: 50 }}>
-                 <Suspense fallback={<Loader />}>
-                   {/* Stage automatically centers the model and sets up good studio lighting */}
-                   <Stage environment="city" intensity={0.5}>
-                     <STLModel url={GALLERY_IMAGES[currentSlide]} />
-                   </Stage>
-                 </Suspense>
-                 {/* OrbitControls allows the user to drag to rotate and scroll to zoom */}
-                 <OrbitControls autoRotate autoRotateSpeed={2} makeDefault />
-               </Canvas>
-               
-               {/* Overlay Gradient (Pointer events none ensures it doesn't block 3D rotation) */}
-               <div className="absolute inset-0 bg-linear-to-t from-black/10 to-transparent pointer-events-none" />
-            </div>
-
-            {/* Controls (Z-index added so buttons sit above the 3D canvas) */}
-            <button 
-              onClick={prevSlide}
-              className="absolute z-10 left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-md"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button 
-              onClick={nextSlide}
-              className="absolute z-10 right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-md"
-            >
-              <ChevronRight size={24} />
-            </button>
-
-            {/* Dots */}
-            <div className="absolute z-10 bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {GALLERY_IMAGES.map((_, idx) => (
-                <div 
-                  key={idx} 
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    idx === currentSlide ? "bg-gray-800 w-4" : "bg-gray-400"
-                  }`} 
-                />
-              ))}
-            </div>
-          </div>
-          <p className="text-center text-sm text-gray-400 mt-2 italic">
-            Snapshots from recent builds & design work (Drag to rotate)
-          </p>
-        </div>
-
-        {/* RIGHT COLUMN: Profile Picture & Actions */}
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 order-1 lg:order-2">
-          
-          <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-2xl ring-1 ring-gray-100">
-             <img 
-              src="/will.png" 
-              alt="Will Corson" 
-              className="object-cover w-full h-full"
-            /> 
-          </div>
+      {/* --- SECTION 2: PROFILE PICTURE --- */}
+      <div className="flex justify-center mb-16 w-full">
+        <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-2xl ring-1 ring-gray-100">
+           <img 
+            src="/will.png" 
+            alt="Will Corson" 
+            className="object-cover w-full h-full"
+          /> 
         </div>
       </div>
 
@@ -196,6 +121,14 @@ export default function Home() {
             </div>
 
           </div>
+      </div>
+      <div className="mb-6 mt-4">
+        <p className="text-xl text-gray-500 mt-4 font-semibold uppercase tracking-widest">
+          Recent Projects
+        </p>
+        <div className="border-2 border-black rounded-xl mt-4">
+        <PhotoCarouselDisplay photos={photos} />
+        </div>
       </div>
 
       {/* --- SECTION 4: CONTACT AREA --- */}
