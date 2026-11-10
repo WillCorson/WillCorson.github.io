@@ -10,8 +10,8 @@ import {
 import STLModelDisplay from "@/components/STLModelDisplay";
 import PhotoCarouselDisplay from "@/components/PhotoCarouselDisplay"; 
 import type Project from "../models/project";
-import PROJECTS from "../models/projects";
 import Modal from "@/components/modal";
+import { PROJECTS } from "../models/projects";
 
 
 

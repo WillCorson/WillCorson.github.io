@@ -2,94 +2,8 @@
 
 import { useState } from "react";
 import type Project from "@/app/models/project";
-import PROJECTS from "@/app/models/projects";
+import  { PROJECTS, EDUCATION, EXPERIENCE } from "@/app/models/projects";
 import Modal from "@/components/modal";
-
-// 1. Define the data structures
-interface Experience {
-  id: string;
-  company: string;
-  role: string;
-  period: string;
-  description: string[];
-  projectIds: string[];
-}
-
-interface Education {
-  degree: string;
-  institution: string;
-  period: string;
-}
-
-// 2. Populate the data
-const EXPERIENCE: Experience[] = [
-  {
-    id: "1819-innovation-hub",
-    company: "1819 Innovation Hub",
-    role: "Makerspace Prototyping Technician Part Time",
-    period: "August 2024 - Present",
-    description: [
-      "Run and maintain a print farm that includes Desktop, Metal & Industrial FDM, and Formlabs SLA printers.",
-      "Trained new members through certifications & workshops on makerspace equipment, tools and software such as a Artech 3d Scanner, Laser Cutters, a Vacuum Former, Sewing Machines & Graphics Printers.",
-      "Completed projects include project samples for machinery, new curriculum for members, and research for developing my own skills.",
-    ],
-    projectIds: [
-      "3d-modeled-prop-swords",
-      "coverslip-holder",
-      "brainwave-reactive-sword",
-      "model-engine",
-      "3d-printed-model-rocket",
-    ],
-  },
-  {
-    id: "cincinnati-childrens",
-    company: "Cincinnati Children's Hospital Medical Center",
-    role: "3D Print Lab and Engineering Co-op",
-    period: "May 2025 - August 2025",
-    description: [
-      "Aided in running additive manufacturing equipment including Form 3, 3L and 4 SLA printers, a Stratasys FDM Printer and a Stratasys Medijet J5 printer.",
-      "Aided in the production of custom ear molds for children utilizing SLA printed molds.",
-      "Handled a multitude of design projects for other departments including a coverslip holder, a custom removable needle cap for insulin, and teaching samples.",
-    ],
-    projectIds: [
-      "custom-childrens-ear-molds",
-      "stethoscope-teaching-kit",
-      "laser-cut-lake-erie-islands-map",
-      "lego-ev3-project-2",
-      "3d-modeled-bike-assembly",
-    ],
-  },
-  {
-    id: "mitsubishi-electric-automotive",
-    company: "Mitsubishi Electric Automotive America, Inc.",
-    role: "Training and Development Engineering Co-op",
-    period: "January 2023 - April 2023",
-    description: [
-      "A full-time engineering position worked on a variety of projects from full design projects to hands on building.",
-      "Helped design and 3d print a working gripper arm for wire cutting to go out on the manufacturing line for use.",
-      "Created Teaching Examples & Curriculum to train technicians going out to run the line",
-    ],
-    projectIds: [
-      "custom-syringe-cap",
-      "3d-printed-pvc-staff-prop",
-      "transforming-nerf-gun",
-      "lego-ev3-project-1",
-    ],
-  },
-];
-
-const EDUCATION: Education[] = [
-  {
-    degree: "Bachelor's Degree in Mechanical Engineering Technology",
-    institution: "University of Cincinnati",
-    period: "August 2021 - May 2026"
-  },
-  {
-    degree: "Honors Stem Diploma",
-    institution: "Dublin Jerome High School",
-    period: "August 2018 - May 2021"
-  }
-];
 
 // 3. The Component
 export default function Resume() {
@@ -203,7 +117,6 @@ export default function Resume() {
               </div>
             );
           })}
-
         </div>
       </section>
 
