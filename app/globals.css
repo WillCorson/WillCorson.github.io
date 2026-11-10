@@ -127,3 +127,50 @@
     @apply font-sans;
   }
 }
+
+.project-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(0.5rem) scale(0.98);
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease,
+    display 200ms allow-discrete,
+    overlay 200ms allow-discrete;
+}
+
+.project-modal[open] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.project-modal::backdrop {
+  background-color: rgb(17 24 39 / 0);
+  transition:
+    background-color 200ms ease,
+    display 200ms allow-discrete;
+}
+
+.project-modal[open]::backdrop {
+  background-color: rgb(17 24 39 / 0.5);
+}
+
+@starting-style {
+  .project-modal[open] {
+    opacity: 0;
+    transform: translateY(0.5rem) scale(0.98);
+  }
+
+  .project-modal[open]::backdrop {
+    background-color: rgb(17 24 39 / 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-modal,
+  .project-modal::backdrop {
+    transition-duration: 0.01ms;
+  }
+}

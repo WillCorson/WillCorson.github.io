@@ -1,4 +1,5 @@
 export default interface Project {
+  id: string;
   title: string;
   year: string;
   category: string;

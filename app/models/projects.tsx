@@ -1,7 +1,8 @@
-import Project from "./project";
+import type Project from "./project";
 
 const PROJECTS: Project[] =[
   {
+    id: "3d-modeled-prop-swords",
     title: "3D Modeled Prop Swords",
     year: "2025",
     category: "3D Printing & Design",
@@ -12,6 +13,7 @@ const PROJECTS: Project[] =[
     stlCarousel: true
   },
   {
+    id: "custom-childrens-ear-molds",
     title: "Custom Childrens Ear Molds",
     year: "2025",
     category: "Design & Prototyping",
@@ -22,6 +24,7 @@ const PROJECTS: Project[] =[
     stlCarousel: false
   },
   {
+    id: "custom-syringe-cap",
     title: "Custom Syringe Cap",
     year: "2025",
     category: "Design & Automation",
@@ -32,6 +35,7 @@ const PROJECTS: Project[] =[
     stlCarousel: false
   },
   {
+    id: "stethoscope-teaching-kit",
     title: "Stethoscope Teaching Kit",
     year: "2025",
     category: "Design & 3D Printing",
@@ -42,6 +46,7 @@ const PROJECTS: Project[] =[
     stlCarousel: false
   },
   {
+    id: "coverslip-holder",
     title: "Coverslip Holder",
     year: "2025",
     category: "Design & 3D Printing",
@@ -52,6 +57,7 @@ const PROJECTS: Project[] =[
     stlCarousel: false
   },
   {
+    id: "3d-printed-pvc-staff-prop",
     title: "3D Printed PVC Staff Prop",
     year: "2024",
     category: "Design & 3D Printing",
@@ -62,6 +68,7 @@ const PROJECTS: Project[] =[
     stlCarousel: false
   },
   {
+    id: "laser-cut-lake-erie-islands-map",
     title: "Laser Cut Lake Erie Islands Topographical Map",
     year: "2024",
     category: "Design & 3D Printing",
@@ -72,6 +79,7 @@ const PROJECTS: Project[] =[
     stlCarousel: false
   },
   {
+    id: "brainwave-reactive-sword",
     title: "Brainwave Reactive Sword",
     year: "2023",
     category: "Design & 3D Printing",
@@ -82,6 +90,7 @@ const PROJECTS: Project[] =[
     stlCarousel: false
   },
   {
+    id: "transforming-nerf-gun",
     title: "Functioning Transforming Nerf Gun",
     year: "2023",
     category: "Design & 3D Printing",
@@ -92,6 +101,7 @@ const PROJECTS: Project[] =[
     stlCarousel: false
   },
   {
+    id: "3d-modeled-bike-assembly",
     title: "3d Modeled Bike Assembly",
     year: "2022",
     category: "Design & 3D Printing",
@@ -102,6 +112,7 @@ const PROJECTS: Project[] =[
     stlCarousel: false
   },
   {
+    id: "lego-ev3-project-2",
     title: "Lego EV3 Project #2",
     year: "2022",
     category: "Design & 3D Printing",
@@ -112,6 +123,7 @@ const PROJECTS: Project[] =[
     stlCarousel: false
   },
   {
+    id: "model-engine",
     title: "Model Engine",
     year: "2022",
     category: "Design & 3D Printing",
@@ -122,6 +134,7 @@ const PROJECTS: Project[] =[
     stlCarousel: false
   },
   {
+    id: "lego-ev3-project-1",
     title: "Lego EV3 Project #1",
     year: "2021",
     category: "Design & 3D Printing",
@@ -132,6 +145,7 @@ const PROJECTS: Project[] =[
     stlCarousel: false
   },
   {
+    id: "3d-printed-model-rocket",
     title: "3d Printed Model Rocket",
     year: "2020",
     category: "Design & 3D Printing",
