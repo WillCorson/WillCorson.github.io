@@ -52,7 +52,7 @@ export default function Home() {
       {/* --- SECTION 1: CENTERED NAME/HEADER --- */}
       <div className="text-center mb-12">
         <p className="text-xl text-gray-500 mt-4 font-semibold uppercase tracking-widest">
-          William Corson
+          Will Corson
         </p>
       </div>
 
