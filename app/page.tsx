@@ -1,5 +1,7 @@
 "use client";
 import { 
+  Instagram,
+  Linkedin,
   Mail, 
   Phone,
 } from "lucide-react";
@@ -90,45 +92,60 @@ export default function Home() {
       <div className="border-t border-gray-200 pt-12">
         <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Get in Touch</h3>
         <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-12">
-          <div>
+          <div className="flex flex-col gap-4">
             <a 
-            href="mailto:goalmaster8@gmail.com" 
-            className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all group"
-          >
-            <div className="bg-blue-50 p-4 rounded-full group-hover:bg-blue-100 transition-colors">
-              <Mail className="text-blue-600 w-6 h-6" />
-            </div>
-            <div>
-              <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">Email Me</p>
-              <p className="text-lg font-medium text-gray-900">goalmaster8@gmail.com</p>
-            </div>
+              href="mailto:goalmaster8@gmail.com" 
+              className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all group"
+            >
+              <div className="bg-blue-50 p-4 rounded-full group-hover:bg-blue-100 transition-colors">
+                <Mail className="text-blue-600 w-6 h-6" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">Email Me</p>
+                <p className="text-lg font-medium text-gray-900">goalmaster8@gmail.com</p>
+              </div>
             </a>
+
             <div className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-green-300 transition-all group cursor-default">
-            <div className="bg-green-50 p-4 rounded-full group-hover:bg-green-100 transition-colors">
-              <Phone className="text-green-600 w-6 h-6" />
-            </div>
-            <div>
-              <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">Call Me</p>
-              <p className="text-lg font-medium text-gray-900">+1 (555) 123-4567</p>
-            </div>
+              <div className="bg-green-50 p-4 rounded-full group-hover:bg-green-100 transition-colors">
+                <Phone className="text-green-600 w-6 h-6" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">Call Me</p>
+                <p className="text-lg font-medium text-gray-900">+1 (555) 123-4567</p>
+              </div>
             </div>
           </div>
-          <div>
+
+          <div className="flex flex-col gap-4">
             <a 
-            href="https://www.linkedin.com/in/william-corson-a16667232/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all group"
-          >
-              LinkedIn
+              href="https://www.linkedin.com/in/william-corson-a16667232/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all group"
+            >
+              <div className="bg-blue-50 p-4 rounded-full group-hover:bg-blue-100 transition-colors">
+                <Linkedin className="text-blue-600 w-6 h-6" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">LinkedIn</p>
+                <p className="text-lg font-medium text-gray-900">/william-corson</p>
+              </div>
             </a>
+
             <a 
-            href="https://www.instagram.com/bigtimber35" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all group"
-          >
-              Instagram
+              href="https://www.instagram.com/bigtimber35" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-pink-300 transition-all group"
+            >
+              <div className="bg-pink-50 p-4 rounded-full group-hover:bg-pink-100 transition-colors">
+                <Instagram className="text-pink-600 w-6 h-6" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">Instagram</p>
+                <p className="text-lg font-medium text-gray-900">@bigtimber35</p>
+              </div>
             </a>
           </div>
         </div>

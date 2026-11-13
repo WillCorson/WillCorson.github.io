@@ -165,6 +165,7 @@ export const PROJECTS: Project[] =[
   period: string;
   description: string[];
   projectIds: string[];
+  skills: string[];
 }
 
 export interface Education {
@@ -192,6 +193,7 @@ export const EXPERIENCE: Experience[] = [
       "model-engine",
       "3d-printed-model-rocket",
     ],
+    skills: ["3D Printing", "CAD Design", "Prototyping", "Teaching"]
   },
   {
     id: "cincinnati-childrens",
@@ -210,6 +212,7 @@ export const EXPERIENCE: Experience[] = [
       "lego-ev3-project-2",
       "3d-modeled-bike-assembly",
     ],
+    skills: ["3D Printing", "CAD Design", "Prototyping", "Medical Device Design"]
   },
   {
     id: "mitsubishi-electric-automotive",
@@ -227,6 +230,7 @@ export const EXPERIENCE: Experience[] = [
       "transforming-nerf-gun",
       "lego-ev3-project-1",
     ],
+    skills: ["3D Printing", "CAD Design", "Prototyping", "Manufacturing"]
   },
 ];
 

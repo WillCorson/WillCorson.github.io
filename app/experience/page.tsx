@@ -90,6 +90,22 @@ export default function Resume() {
                       </li>
                     ))}
                   </ul>
+
+                  <div className="mt-4">
+                    <div className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-gray-500">
+                      Skills Used
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {job.skills.map((skill) => (
+                        <span
+                          key={`${job.id}-${skill}`}
+                          className="inline-flex items-center rounded-full bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-200"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
                 <div
