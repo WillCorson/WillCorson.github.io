@@ -234,7 +234,7 @@ export const EDUCATION: Education[] = [
   {
     degree: "Bachelor's Degree in Mechanical Engineering Technology",
     institution: "University of Cincinnati",
-    period: "August 2021 - May 2026"
+    period: "August 2021 - May 2027"
   },
   {
     degree: "Honors Stem Diploma",
