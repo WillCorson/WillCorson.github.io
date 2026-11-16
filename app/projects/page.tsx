@@ -70,7 +70,7 @@ export default function Projects() {
                 <li key={index}>
                   {index !== 0 && <hr className="bg-gray-200" />}
 
-                  <div className="timeline-start mb-10 md:mb-0 px-4 w-full md:w-1/2 flex flex-col justify-center md:items-end">
+                  <div className="timeline-start mb-5 md:mb-10 px-4 w-full md:w-1/2 flex flex-col justify-center md:items-end">
                     {isEven ? (
                       <button 
                         onClick={() => handleProjectClick(project)}
