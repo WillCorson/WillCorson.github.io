@@ -9,8 +9,8 @@ export const PROJECTS: Project[] =[
     description: "I am creating a custom silicone dice mold that incorporates custom symbols on each die. The design process steps involve modeling the dice, SLA 3D printing, polishing the dice, casting the 3D printeddice in silicone, removing the dice from the mold and finally casting the molds with resin.",
     tech:["Blender", "SLA 3D Printing", "Mold Making", "Resin Casting", "Post Processing"],
     links: { demo: "#" },
-    displayFiles: ["/STL/DiceMold.STL", "/globe.svg", "/next.svg"],
-    stlCarousel: false
+    displayFiles: ["/STL/DiceMold.STL"],
+    stlCarousel: true
   },
   {
     id: "Laser-Cutting-to-UV-Workshop",
