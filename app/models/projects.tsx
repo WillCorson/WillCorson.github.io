@@ -20,8 +20,8 @@ export const PROJECTS: Project[] =[
     description: "Created curriculum for a class teaching 1819 students & members about the process of creating a project using the laser cutter and then taking it to the UV printer to print on. The piece we make for this class is a custom keychain. This class also acts as a certifications for the UV Printer.",
     tech:["UV Printing", "Laser Cutting", "Adobe Illustrator", "Teaching", "Customer Facing"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
-    stlCarousel: false
+    displayFiles: ["/STL/Calibration Token Half Circle 5mm Updated.stl", "/STL/Calibration Token Half Circle 10mm Updated.stl", "/STL/Calibration Token Half Circle 15mm Updated.stl", "/STL/Calibration Token Rectanglular Prism 5mm updated.stl", "/STL/Calibration Token Rectanglular Prism 10mm updated.stl", "/STL/Calibration Token Rectanglular Prism 15mm updated.stl", "/STL/Calibration Token Right Angle 5mm updated.stl", "/STL/Calibration Token Right Angle 10mm updated.stl", "/STL/Calibration Token Right Angle 15mm updated.stl"],
+    stlCarousel: true
   },
   {
     id: "Calibration-Tokens-For-Verifying-Biocompatible-Resin",
@@ -32,7 +32,7 @@ export const PROJECTS: Project[] =[
     tech:["Fusion 360", "SLA 3D Printing", "Material Verification", "Research",],
     links: { demo: "#" },
     displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
-    stlCarousel: false
+    stlCarousel: true
   },
   {
     id: "custom-childrens-ear-molds",
