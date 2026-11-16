@@ -20,8 +20,8 @@ export const PROJECTS: Project[] =[
     description: "Created curriculum for a class teaching 1819 students & members about the process of creating a project using the laser cutter and then taking it to the UV printer to print on. The piece we make for this class is a custom keychain. This class also acts as a certifications for the UV Printer.",
     tech:["UV Printing", "Laser Cutting", "Adobe Illustrator", "Teaching", "Customer Facing"],
     links: { demo: "#" },
-    displayFiles: ["/STL/Calibration Token Half Circle 5mm Updated.stl", "/STL/Calibration Token Half Circle 10mm Updated.stl", "/STL/Calibration Token Half Circle 15mm Updated.stl", "/STL/Calibration Token Rectanglular Prism 5mm updated.stl", "/STL/Calibration Token Rectanglular Prism 10mm updated.stl", "/STL/Calibration Token Rectanglular Prism 15mm updated.stl", "/STL/Calibration Token Right Angle 5mm updated.stl", "/STL/Calibration Token Right Angle 10mm updated.stl", "/STL/Calibration Token Right Angle 15mm updated.stl"],
-    stlCarousel: true
+    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
+    stlCarousel: false
   },
   {
     id: "Calibration-Tokens-For-Verifying-Biocompatible-Resin",
@@ -31,7 +31,7 @@ export const PROJECTS: Project[] =[
     description: "I worked with the Cincinnati Children's Hospital 3D Print Lab to create calibration tokens for verifying the accuracy of Formlabs biocompatible resins they offer. The tokens were designed to be printed on a Formlabs Form 3 and 4 printer, post processed in the same conditions followed by sterilization. At each of these steps they were measured to ensure that the prints were within the required tolerances for medical applications and assess the dimensional changes between each step. The findings will eventually be published in a research paper about the use of 3D printed surgical guides I will be labeled co-author of.",
     tech:["Fusion 360", "SLA 3D Printing", "Material Verification", "Research",],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
+    displayFiles: ["/STL/Calibration Token Half Circle 5mm Updated.stl", "/STL/Calibration Token Half Circle 10mm Updated.stl", "/STL/Calibration Token Half Circle 15mm Updated.stl", "/STL/Calibration Token Rectanglular Prism 5mm updated.stl", "/STL/Calibration Token Rectanglular Prism 10mm updated.stl", "/STL/Calibration Token Rectanglular Prism 15mm updated.stl", "/STL/Calibration Token Right Angle 5mm updated.stl", "/STL/Calibration Token Right Angle 10mm updated.stl", "/STL/Calibration Token Right Angle 15mm updated.stl"],
     stlCarousel: true
   },
   {
@@ -42,7 +42,7 @@ export const PROJECTS: Project[] =[
     description: "I aided mass production for custom ear molds in our audiology department. The process utilized SLA printed molds, post processing, and silicone injecting before giving a lacquer finish. During my time at cincinnati childrens I completed over 1000 ear molds for kids and helped improve the process of making them.",
     tech:["SLA 3D Printing", "Custom Injection Molding", "Process Improvement", "Customer Facing", "Mass Production "],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
+    displayFiles: ["/earmold0.jpg", "/earmold1.jpg", "/earmold2.jpg", "/earmold3.jpg", "/earmold4.jpg", "/earmold5.jpg", "/earmold6.jpg", "/earmold7.mp4", "/earmold8.jpg", "/earmold9.jpg", "/earmold10.jpg", "/earmold11.jpg", "/earmold12.jpg", "/earmold13.jpg", "/earmold14.jpg", "/earmold15.jpg", "/earmold16.mp4"],
     stlCarousel: false
   },
     {
@@ -53,7 +53,7 @@ export const PROJECTS: Project[] =[
     description: "Created an in house MRI Coil support system to keep patients steady, reduce motion artifacts and optimize scans. This project saved the hospital thousands with its reproducibility, saftey improvements and long lasting design, drastically improving the off the market solution that was currently being used. The design was optimized to be easy to produce and replicated for all of the MRI's across the hospital to use. The height is easily adjustible to help technicians adjust for kids of all ages and sizes. Safety and durability was also a primary design focus to fix issues with the previous solution.",
     tech:["Fusion 360", "Laser Cutting", "SLA 3D Printing", "Adobe Illustrator", "Design for Safety", "Cost Saving", "Project Management"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
+    displayFiles: ["/Support System in Use (2).jpg", "/Dissasembled Support System.jpg", "/Support System on bed.jpg", "/Support System in Use.jpg", ],
     stlCarousel: false
   },
   {
@@ -64,8 +64,8 @@ export const PROJECTS: Project[] =[
     description: "I designed four custom multi-color 3D printed keychains for the child life department based on different organs. These keychains were designed to be passed out to kids to cheer them up during their stay or when they get discharged. They were made specific organs to help encourage individulaity and a keepsake depending on what the purpose of their stay was.",
     tech:["Fusion 360", "FDM 3D Printing", "Adobe Illustrator", "Project Management", "Customer Facing"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
-    stlCarousel: false
+    displayFiles: ["/STL/Intestines Keychain.stl", "/STL/Kidney Keychain.stl", "/STL/Liver keychain_.stl", "/STL/Liver keychain_.stl", "/Child Life Keychains.JPEG"],
+    stlCarousel: true
   },
   {
     id: "frog-platform",
@@ -75,7 +75,7 @@ export const PROJECTS: Project[] =[
     description: "I designed a resting platform to be added to the frog habitats in the research department. They were so well liked more than 30 ended up being produced and used in their various habitats. Later they also shared the file with other researchers for their habitats.",
     tech:["Blender", "FDM 3D Printing", "Customer Facing"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
+    displayFiles: ["/4 (Caption-In Use Frog Platform).jpeg", "/3 (Caption- In Use Frog Platform).jpeg", "/Frog Platform 1.JPEG"],
     stlCarousel: false
   },
   {
@@ -86,8 +86,8 @@ export const PROJECTS: Project[] =[
     description: "I created mixing caps for glitter containers to cleanly and efficiently transfer glitter into silicone injection tips, for use in custom ear mold production. They were modeled with individual labels for each cap and printed using clear resin on a Formlabs SLA printer so the glitter color was visible and the dimensional accuracy would allow for a friction fit.",
     tech:["Fusion 360", "SLA 3D Printing", "Process Improvement"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
-    stlCarousel: false
+    displayFiles: ["/STL/Glitter Funnel Cap.stl", "/1 Glitter Cap.png", "/2 (Caption- Glitter caps in Use).JPEG", "/3 (Caption- Glitter Cap In Use).JPEG", "/4 (Caption- Glitter Caps in use 2).JPEG"],
+    stlCarousel: true
   },
   {
     id: "3d-modeled-prop-swords",
