@@ -91,13 +91,13 @@ export const PROJECTS: Project[] =[
   },
   {
     id: "3d-modeled-prop-swords",
-    title: "3D Modeled Prop Swords",
+    title: "3D Modeled Prop Sword",
     year: "May 2025 - January 2026",
     category: "Personal Project",
-    description: "Designed two dual 3D printed sword props, each with LED strips inside the blade that are coded to display a different effect with each press of a button.",
+    description: "Designed a dual 3D printed sword prop with LED strips inside the blade that are coded to display a different effect with each press of a button.",
     tech:["Blender", "FDM 3D Printing", "Electronics"],
     links: { demo: "#" },
-    displayFiles:["/STL/EnmaExploded.stl", "/STL/EnmaGuardHole.stl", "/STL/FrierenStaff.stl", "/STL/hornets.stl", "/STL/trueShikaiQuincy.stl", "/STL/trueShikaiQuincyExploded.stl"],
+    displayFiles:["/STL/trueShikaiQuincy.stl", "/STL/trueShikaiQuincyExploded.stl", "/STL/hornets.stl"],
     stlCarousel: true
   },
   {
@@ -108,7 +108,7 @@ export const PROJECTS: Project[] =[
     description: "For my intro to additive manufacturing course I created a pinewood derby car utilizing SLS printing and Nylon powder, placing second in the competition. I designed the car to be aerodynamic and lightweight while also being visually appealing.",
     tech:["Blender", "SLS 3D Printing", "Post Processing"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
+    displayFiles: ["/Speed Racer.JPEG", "/Speed Racer.JPEG", "/Derby Race.MP4", "/OffPrint.MP4", "/Sifting.MP4", "/Sandblast.MP4"],
     stlCarousel: false
   },
   {
@@ -119,8 +119,8 @@ export const PROJECTS: Project[] =[
     description: "I designed a custom syringe cap to limit the loss of insulin during transport from pharmacy to patient. I worked with the pharmacy and doctors to understand the design constraints and goals of the project and utilized 3D modeling, SLA 3D printing, Material research, Iterative testing and design to find the best possible solution.",
     tech:["Fusion 360", "SLA 3D Printing", "Iterative Design", "Project Management"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
-    stlCarousel: false
+    displayFiles: ["/STL/Syringe Cap Final Redesign.stl", "/1 (Caption- Final Design).JPEG", "/3 ((Caption- Final Design).JPEG", "/2 (Caption- Original Design).JPEG", "/5 (Caption- Spacing Tests.JPEG", "/6 (Caption- Prior Iterations).JPEG", "/7 (Caption- Prior Design 2).JPEG", "/STL/Syringe Cap Older Version.stl" ],
+    stlCarousel: true
   },
   {
     id: "stethoscope-teaching-kit",
@@ -152,7 +152,7 @@ export const PROJECTS: Project[] =[
     description: "Leveraged Autodesk Fusion360 to fully 3D model and print parts to make a 6ft 4in fantasy staff. The staff head was designed to screw on for easy transport and maneuverability. Multiple parts were utilized to hide the connection points between the PVC shaft & the staff head.",
     tech: ["Fusion 360", "FDM 3D Printing", "Project Management", "Post Processing"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
+    displayFiles: ["/STL/FrierenStaff.stl", "/globe.svg", "/next.svg"],
     stlCarousel: false
   },
   {
@@ -174,8 +174,8 @@ export const PROJECTS: Project[] =[
     description: "Collaborated with another engineer to design and manufacture a prop sword that turns on and off with coded LEDS when Alpha or Beta brainwaves are read on a connected headset. Through this project I learned the capabilities, limitations & maintenance of 3D printers, Blender, sanding/finishing, & soldering.",
     tech: ["Blender", "FDM 3D Printing", "Post Processing", "Electronics"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
-    stlCarousel: false
+    displayFiles: ["/STL/EnmaExploded.stl", "/STL/EnmaGuardHole.stl"],
+    stlCarousel: true
   },
   {
     id: "3d-modeled-bike-assembly",
@@ -199,17 +199,7 @@ export const PROJECTS: Project[] =[
     displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
     stlCarousel: false
   },
-  {
-    id: "transforming-nerf-gun",
-    title: "Transforming Nerf Gun",
-    year: "February 2021 - July 2021",
-    category: "School Project",
-    description: "Designed the outline for a functioning spring-loaded Nerf gun from scratch as a Capstone Engineering project for Dublin Engineering Academy.",
-    tech: ["3D Design", "Technical Sketching"],
-    links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
-    stlCarousel: false
-  },
+
   {
     id: "3d-printed-model-rocket",
     title: "3D Printed Model Rocket",
