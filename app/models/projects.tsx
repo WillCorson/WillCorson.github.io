@@ -42,7 +42,7 @@ export const PROJECTS: Project[] =[
     description: "I aided mass production for custom ear molds in our audiology department. The process utilized SLA printed molds, post processing, and silicone injecting before giving a lacquer finish. During my time at cincinnati childrens I completed over 1000 ear molds for kids and helped improve the process of making them.",
     tech:["SLA 3D Printing", "Custom Injection Molding", "Process Improvement", "Customer Facing", "Mass Production "],
     links: { demo: "#" },
-    displayFiles: ["/earmold0.jpg", "/earmold1.jpg", "/earmold2.jpg", "/earmold3.jpg", "/earmold4.jpg", "/earmold5.jpg", "/earmold6.jpg", "/earmold7.mp4", "/earmold8.jpg", "/earmold9.jpg", "/earmold10.jpg", "/earmold11.jpg", "/earmold12.jpg", "/earmold13.jpg", "/earmold14.jpg", "/earmold15.jpg", "/earmold16.mp4"],
+    displayFiles: ["/earmold0.jpg", "/earmold1.JPEG", "/earmold2.JPEG", "/earmold3.JPEG", "/earmold4.MP4", "/earmold5.JPEG", "/earmold6.JPEG", "/earmold7.JPEG", "/earmold8.JPEG", "/earmold9.JPEG", "/earmold10.JPEG", "/earmold11.JPEG", "/earmold12.JPEG", "/earmold13.JPEG", "/earmold14.JPEG", "/earmold15.JPEG", "/earmold16.mp4"],
     stlCarousel: false
   },
     {
