@@ -91,13 +91,13 @@ export const PROJECTS: Project[] =[
   },
   {
     id: "3d-modeled-prop-swords",
-    title: "3D Modeled Prop Swords",
+    title: "3D Modeled Prop Sword",
     year: "May 2025 - January 2026",
     category: "Personal Project",
-    description: "Designed two dual 3D printed sword props, each with LED strips inside the blade that are coded to display a different effect with each press of a button.",
+    description: "Designed a dual 3D printed sword prop with LED strips inside the blade that are coded to display a different effect with each press of a button.",
     tech:["Blender", "FDM 3D Printing", "Electronics"],
     links: { demo: "#" },
-    displayFiles:["/STL/EnmaExploded.stl", "/STL/EnmaGuardHole.stl", "/STL/FrierenStaff.stl", "/STL/hornets.stl", "/STL/trueShikaiQuincy.stl", "/STL/trueShikaiQuincyExploded.stl"],
+    displayFiles:["/STL/trueShikaiQuincy.stl", "/STL/trueShikaiQuincyExploded.stl", "/STL/hornets.stl"],
     stlCarousel: true
   },
   {
@@ -108,7 +108,7 @@ export const PROJECTS: Project[] =[
     description: "For my intro to additive manufacturing course I created a pinewood derby car utilizing SLS printing and Nylon powder, placing second in the competition. I designed the car to be aerodynamic and lightweight while also being visually appealing.",
     tech:["Blender", "SLS 3D Printing", "Post Processing"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
+    displayFiles: ["/Speed Racer.JPEG", "/Speed Racer.JPEG", "/Derby Race.MP4", "/OffPrint.MP4", "/Sifting.MP4", "/Sandblast.MP4"],
     stlCarousel: false
   },
   {
@@ -119,30 +119,30 @@ export const PROJECTS: Project[] =[
     description: "I designed a custom syringe cap to limit the loss of insulin during transport from pharmacy to patient. I worked with the pharmacy and doctors to understand the design constraints and goals of the project and utilized 3D modeling, SLA 3D printing, Material research, Iterative testing and design to find the best possible solution.",
     tech:["Fusion 360", "SLA 3D Printing", "Iterative Design", "Project Management"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
-    stlCarousel: false
+    displayFiles: ["/STL/Syringe Cap Final Redesign.stl", "/1 (Caption- Final Design).JPEG", "/3 ((Caption- Final Design).JPEG", "/2 (Caption- Original Design).JPEG", "/5 (Caption- Spacing Tests.JPEG", "/6 (Caption- Prior Iterations).JPEG", "/7 (Caption- Prior Design 2).JPEG", "/STL/Syringe Cap Older Version.stl" ],
+    stlCarousel: true
   },
   {
     id: "stethoscope-teaching-kit",
     title: "Stethoscope Teaching Kit",
     year: "July 2025 - August 2025",
     category: "Cincinnati Children's Hospital",
-    description: "Helped create a teaching kit where kids can build their own stethoscope using 3D printed parts, silicone tubing and a cut out diaphragm. I Mesh edited premade files to fix and adjust them to meet design specifications.",
+    description: "Helped create a teaching kit where kids can build their own stethoscope using 3D printed parts, silicone tubing and a cut out diaphragm. I Mesh edited premade files to fix and adjust them to meet design specifications. As an added teaching tool I helped print a brain that could be split into labeled parts and reassembled using embedded magnets.",
     tech:["Blender", "FDM 3D Printing", "Project Management", "Customer Facing"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
+    displayFiles: ["/1 (caption- Build your own stethescope kit).JPEG", "/2 (caption- Parts of the brain).JPEG", "/3 (caption- Parts of the brain).JPEG"],
     stlCarousel: false
   },
   {
     id: "coverslip-holder",
-    title: "Coverslip Holder",
+    title: "Coverslip Holder",  
     year: "May 2025 - June 2025",
     category: "Cincinnati Children's Hospital",
     description: "I designed and produced a new coverslip holder for medical researchers to test at a higher volume working within the design constraints given I selected a suitable material for them to use for sonicating and cleaning the coverslips without the holder dissolving or damaging the coverslips.",
     tech: ["Fusion 360", "SLA 3D Printing", "Material Research", "Process Improvement"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
-    stlCarousel: false
+    displayFiles: ["/STL/Coverslips holder Final Model.stl", "/1 (caption-Final Design in ABS).JPEG", "/3 (caption- Original Design in Case).JPEG", "/4 (caption- Different Iterations).JPEG", "/6 (caption- Sizing Test).JPEG"],
+    stlCarousel: true
   },
   {
     id: "3d-printed-pvc-staff-prop",
@@ -152,8 +152,8 @@ export const PROJECTS: Project[] =[
     description: "Leveraged Autodesk Fusion360 to fully 3D model and print parts to make a 6ft 4in fantasy staff. The staff head was designed to screw on for easy transport and maneuverability. Multiple parts were utilized to hide the connection points between the PVC shaft & the staff head.",
     tech: ["Fusion 360", "FDM 3D Printing", "Project Management", "Post Processing"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
-    stlCarousel: false
+    displayFiles: ["/STL/FrierenStaff.stl", "/Frieren1.JPEG", "/Frieren2.JPEG", "/Frieren3.JPEG", "Frieren4.JPEG", "Frieren5.JPEG"],
+    stlCarousel: true
   },
   {
     id: "laser-cut-lake-erie-islands-map",
@@ -163,7 +163,7 @@ export const PROJECTS: Project[] =[
     description: "Created a three-dimensional topographical depth chart of the Lake Erie Islands from below water to land. The map was created by laser engraving & cutting out of plywood for each depth layer before fitting it together, sanding, painting & finishing.",
     tech: ["Laser Cutting", "Adobe Illustrator", "Post Processing"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
+    displayFiles: ["/Depth Chart Image 1.jpeg", "/Depth Chart Image 2.JPEG", "/Depth Chart Image 3.MP4", "/Depth Chart Image 4.JPEG", "/Depth Chart Image 5.JPEG"],
     stlCarousel: false
   },
   {
@@ -174,8 +174,8 @@ export const PROJECTS: Project[] =[
     description: "Collaborated with another engineer to design and manufacture a prop sword that turns on and off with coded LEDS when Alpha or Beta brainwaves are read on a connected headset. Through this project I learned the capabilities, limitations & maintenance of 3D printers, Blender, sanding/finishing, & soldering.",
     tech: ["Blender", "FDM 3D Printing", "Post Processing", "Electronics"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
-    stlCarousel: false
+    displayFiles: ["/STL/EnmaExploded.stl", "/STL/EnmaGuardHole.stl", "/1 (Caption- Finished Sword).JPEG", "/2 (Caption- Finished Sword (Lit Up).JPEG", "/3 (Caption- Finished Sword (Lit Up)).JPEG"],
+    stlCarousel: true
   },
   {
     id: "3d-modeled-bike-assembly",
@@ -195,17 +195,6 @@ export const PROJECTS: Project[] =[
     category: "School Project",
     description: "Designed a Lego EV3 robot as a team of 4 in order to complete a number of tasks to satisfy the needs of the customer over the course of a semester.",
     tech:["Robotics", "Python", "Problem Solving"],
-    links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
-    stlCarousel: false
-  },
-  {
-    id: "transforming-nerf-gun",
-    title: "Transforming Nerf Gun",
-    year: "February 2021 - July 2021",
-    category: "School Project",
-    description: "Designed the outline for a functioning spring-loaded Nerf gun from scratch as a Capstone Engineering project for Dublin Engineering Academy.",
-    tech: ["3D Design", "Technical Sketching"],
     links: { demo: "#" },
     displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
     stlCarousel: false
