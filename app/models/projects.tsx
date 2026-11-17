@@ -127,22 +127,22 @@ export const PROJECTS: Project[] =[
     title: "Stethoscope Teaching Kit",
     year: "July 2025 - August 2025",
     category: "Cincinnati Children's Hospital",
-    description: "Helped create a teaching kit where kids can build their own stethoscope using 3D printed parts, silicone tubing and a cut out diaphragm. I Mesh edited premade files to fix and adjust them to meet design specifications.",
+    description: "Helped create a teaching kit where kids can build their own stethoscope using 3D printed parts, silicone tubing and a cut out diaphragm. I Mesh edited premade files to fix and adjust them to meet design specifications. As an added teaching tool I helped print a brain that could be split into labeled parts and reassembled using embedded magnets.",
     tech:["Blender", "FDM 3D Printing", "Project Management", "Customer Facing"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
+    displayFiles: ["/1 (caption- Build your own stethescope kit).JPEG", "/2 (caption- Parts of the brain).JPEG", "/3 (caption- Parts of the brain).JPEG"],
     stlCarousel: false
   },
   {
     id: "coverslip-holder",
-    title: "Coverslip Holder",
+    title: "Coverslip Holder",  
     year: "May 2025 - June 2025",
     category: "Cincinnati Children's Hospital",
     description: "I designed and produced a new coverslip holder for medical researchers to test at a higher volume working within the design constraints given I selected a suitable material for them to use for sonicating and cleaning the coverslips without the holder dissolving or damaging the coverslips.",
     tech: ["Fusion 360", "SLA 3D Printing", "Material Research", "Process Improvement"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
-    stlCarousel: false
+    displayFiles: ["/STL/Coverslips holder Final Model.stl", "/1 (caption-Final Design in ABS).JPEG", "/3 (caption- Original Design in Case).JPEG", "/4 (caption- Different Iterations).JPEG", "/6 (caption- Sizing Test).JPEG"],
+    stlCarousel: true
   },
   {
     id: "3d-printed-pvc-staff-prop",
@@ -152,8 +152,8 @@ export const PROJECTS: Project[] =[
     description: "Leveraged Autodesk Fusion360 to fully 3D model and print parts to make a 6ft 4in fantasy staff. The staff head was designed to screw on for easy transport and maneuverability. Multiple parts were utilized to hide the connection points between the PVC shaft & the staff head.",
     tech: ["Fusion 360", "FDM 3D Printing", "Project Management", "Post Processing"],
     links: { demo: "#" },
-    displayFiles: ["/STL/FrierenStaff.stl", "/globe.svg", "/next.svg"],
-    stlCarousel: false
+    displayFiles: ["/STL/FrierenStaff.stl", "/Frieren1.JPEG", "/Frieren2.JPEG", "/Frieren3.JPEG", "Frieren4.JPEG", "Frieren5.JPEG"],
+    stlCarousel: true
   },
   {
     id: "laser-cut-lake-erie-islands-map",
@@ -163,7 +163,7 @@ export const PROJECTS: Project[] =[
     description: "Created a three-dimensional topographical depth chart of the Lake Erie Islands from below water to land. The map was created by laser engraving & cutting out of plywood for each depth layer before fitting it together, sanding, painting & finishing.",
     tech: ["Laser Cutting", "Adobe Illustrator", "Post Processing"],
     links: { demo: "#" },
-    displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
+    displayFiles: ["/Depth Chart Image 1.jpeg", "/Depth Chart Image 2.JPEG", "/Depth Chart Image 3.MP4", "/Depth Chart Image 4.JPEG", "/Depth Chart Image 5.JPEG"],
     stlCarousel: false
   },
   {
@@ -174,7 +174,7 @@ export const PROJECTS: Project[] =[
     description: "Collaborated with another engineer to design and manufacture a prop sword that turns on and off with coded LEDS when Alpha or Beta brainwaves are read on a connected headset. Through this project I learned the capabilities, limitations & maintenance of 3D printers, Blender, sanding/finishing, & soldering.",
     tech: ["Blender", "FDM 3D Printing", "Post Processing", "Electronics"],
     links: { demo: "#" },
-    displayFiles: ["/STL/EnmaExploded.stl", "/STL/EnmaGuardHole.stl"],
+    displayFiles: ["/STL/EnmaExploded.stl", "/STL/EnmaGuardHole.stl", "/1 (Caption- Finished Sword).JPEG", "/2 (Caption- Finished Sword (Lit Up).JPEG", "/3 (Caption- Finished Sword (Lit Up)).JPEG"],
     stlCarousel: true
   },
   {
@@ -199,7 +199,6 @@ export const PROJECTS: Project[] =[
     displayFiles: ["/file.svg", "/globe.svg", "/next.svg"],
     stlCarousel: false
   },
-
   {
     id: "3d-printed-model-rocket",
     title: "3D Printed Model Rocket",
