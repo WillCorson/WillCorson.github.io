@@ -60,6 +60,8 @@ export default function Resume() {
                   >
                     Experience
                   </button>
+
+                  {jobProjects.length > 0 && (
                   <button
                     id={`${job.id}-projects-tab`}
                     type="button"
@@ -75,6 +77,7 @@ export default function Resume() {
                   >
                     Projects ({jobProjects.length})
                   </button>
+                  )}
                 </div>
 
                 <div

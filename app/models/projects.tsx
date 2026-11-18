@@ -283,10 +283,7 @@ export const EXPERIENCE: Experience[] = [
       "Validated functionality through size constraints through iterative design and testing.",
     ],
     projectIds: [
-      "custom-syringe-cap",
-      "3d-printed-pvc-staff-prop",
-      "transforming-nerf-gun",
-      "lego-ev3-project-1",
+      
     ],
   },
 ];
