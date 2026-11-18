@@ -1,15 +1,29 @@
 "use client";
-import { 
+import { useState } from "react";
+import {
+  Box,
   Instagram,
   Linkedin,
   Mail, 
   Phone,
 } from "lucide-react";
-import PhotoCarouselDisplay from "@/components/PhotoCarouselDisplay";
+import Modal from "@/components/modal";
+import type Project from "./models/project";
+import { PROJECTS } from "./models/projects";
 
-const photos: string[] = ["/file.svg", "/globe.svg", "/next.svg"];
+const recentProjectIds = [
+  "Calibration-Tokens-For-Verifying-Biocompatible-Resin",
+  "3d-modeled-prop-swords",
+  "MRI-Coil-Support-System",
+  "custom-childrens-ear-molds",
+];
+const recentProjects = PROJECTS.filter((project) =>
+  recentProjectIds.includes(project.id)
+);
 
 export default function Home() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
   return (
     <div className="flex flex-col min-h-[80vh] animate-in fade-in slide-in-from-bottom-4 duration-700 max-w-6xl mx-auto px-4 py-12">
       
@@ -50,18 +64,56 @@ export default function Home() {
               organizations including but not limited to:
             </p>
             
-            <div className="mb-6 mt-4">
-              <p className="text-xl text-gray-500 mt-4 font-semibold uppercase tracking-widest">
+              <h3 className="text-xl text-gray-500 mt-4 font-semibold uppercase tracking-widest">
                 Recent Projects
-              </p>
-              mri support system
-              
-              <div className="border-2 border-black rounded-xl mt-4">
-              <PhotoCarouselDisplay photos={photos} />
-              </div>
+              </h3>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+              {recentProjects.map((project) => {
+                const previewImage = project.displayFiles.find((file) =>
+                  /\.(jpe?g|png|gif|webp|avif|bmp)$/i.test(file)
+                );
+
+                return (
+                  <button
+                    key={project.id}
+                    type="button"
+                    onClick={() => setSelectedProject(project)}
+                    className="overflow-hidden rounded-xl border border-gray-200 bg-white text-left shadow-sm transition hover:border-blue-300 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                  >
+                    {previewImage ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={previewImage}
+                        alt=""
+                        className="aspect-video w-full object-cover"
+                      />
+                    ) : (
+                      <div className="flex aspect-video w-full items-center justify-center bg-gray-100 text-gray-400">
+                        <Box aria-hidden="true" size={40} />
+                      </div>
+                    )}
+                    <div className="p-5">
+                      <h4 className="text-lg font-bold text-gray-900">
+                        {project.title}
+                      </h4>
+                      <p className="mt-1 text-sm text-gray-500">
+                        {project.year} · {project.category}
+                      </p>
+                      <p className="mt-3 line-clamp-3 text-sm text-gray-600">
+                        {project.description}
+                      </p>
+                    </div>
+                  </button>
+                );
+              })}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+            
+          </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 border-t border-gray-200 pt-12 pb-12">
               <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
                 <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
                   <span className="w-8 h-1 bg-blue-500 rounded-full"></span>
@@ -88,8 +140,6 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-          </div>
-      </div>
 
       <div className="border-t border-gray-200 pt-12">
         <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Get in Touch</h3>
@@ -150,6 +200,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Modal
+        selectedProject={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </div>
   );
 }

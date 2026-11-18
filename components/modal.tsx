@@ -62,7 +62,6 @@ export default function Modal({ selectedProject, onClose }: ModalProps) {
               )}
               {photos.length > 0 && <PhotoCarouselDisplay photos={photos} />}
               {videos.length > 0 && <VideoCarouselDisplay videos={videos} />}
-                
             </div>
           )}
 
