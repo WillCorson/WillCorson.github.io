@@ -1,10 +1,11 @@
 "use client";
 
 import type Project from "@/app/models/project";
-import { ExternalLink, X } from "lucide-react";
+import { ExternalLink, Video, X } from "lucide-react";
 import { useEffect, useRef } from "react";
 import PhotoCarouselDisplay from "./PhotoCarouselDisplay";
 import STLModelDisplay from "./STLModelDisplay";
+import VideoCarouselDisplay from "./VideoCarouselDisplay";
 
 interface ModalProps {
   selectedProject: Project | null;
@@ -15,7 +16,8 @@ export default function Modal({ selectedProject, onClose }: ModalProps) {
   const modalRef = useRef<HTMLDialogElement>(null);
   const mediaFiles = selectedProject?.displayFiles ?? [];
   const stls = mediaFiles.filter((file) => /\.stl$/i.test(file));
-  const photos = mediaFiles.filter((file) => !/\.stl$/i.test(file));
+  const photos = mediaFiles.filter((file) => /(\.JPEG|\.PNG|\.JPG)$/i.test(file));
+  const videos = mediaFiles.filter((file) => /(\.MP4|\.MOV|\.AVI)$/i.test(file));
 
   useEffect(() => {
     const modal = modalRef.current;
@@ -32,7 +34,7 @@ export default function Modal({ selectedProject, onClose }: ModalProps) {
     <dialog
       ref={modalRef}
       onClose={onClose}
-      className="project-modal bg-white border border-gray-200 rounded-lg shadow-lg max-h-[90vh] max-w-2xl w-[calc(100%-2rem)] p-6 overflow-y-auto"
+      className="project-modal bg-white border border-gray-200 rounded-lg shadow-lg max-h-[90vh] max-w-2xl w-[calc(100%-2rem)] p-6 overflow-y-scroll"
     >
       {selectedProject && (
         <div>
@@ -59,6 +61,8 @@ export default function Modal({ selectedProject, onClose }: ModalProps) {
                 <STLModelDisplay key={selectedProject.id} stls={stls} />
               )}
               {photos.length > 0 && <PhotoCarouselDisplay photos={photos} />}
+              {videos.length > 0 && <VideoCarouselDisplay videos={videos} />}
+                
             </div>
           )}
 
@@ -74,17 +78,6 @@ export default function Modal({ selectedProject, onClose }: ModalProps) {
               </span>
             ))}
           </div>
-
-          {selectedProject.links.demo && (
-            <a
-              href={selectedProject.links.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-blue-600"
-            >
-              <ExternalLink className="w-4 h-4" /> Live Demo
-            </a>
-          )}
         </div>
       )}
     </dialog>

@@ -156,14 +156,6 @@ export default function Projects() {
                         </span>
                       ))}
                     </div>
-
-                    <div className="flex gap-4">
-                      {project.links.demo && (
-                        <a href={project.links.demo} className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-blue-600">
-                          <ExternalLink className="w-4 h-4" /> Live Demo
-                        </a>
-                      )}
-                    </div>
                   </div>
                 </AccordionContent>
               </AccordionItem>
