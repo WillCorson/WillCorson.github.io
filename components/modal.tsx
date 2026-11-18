@@ -13,6 +13,9 @@ interface ModalProps {
 
 export default function Modal({ selectedProject, onClose }: ModalProps) {
   const modalRef = useRef<HTMLDialogElement>(null);
+  const mediaFiles = selectedProject?.displayFiles ?? [];
+  const stls = mediaFiles.filter((file) => /\.stl$/i.test(file));
+  const photos = mediaFiles.filter((file) => !/\.stl$/i.test(file));
 
   useEffect(() => {
     const modal = modalRef.current;
@@ -50,13 +53,12 @@ export default function Modal({ selectedProject, onClose }: ModalProps) {
             </button>
           </div>
 
-          {selectedProject.displayFiles.length > 0 && (
-            <div className="mb-6">
-              {selectedProject.stlCarousel ? (
-                <STLModelDisplay stls={selectedProject.displayFiles} />
-              ) : (
-                <PhotoCarouselDisplay photos={selectedProject.displayFiles} />
+          {mediaFiles.length > 0 && (
+            <div className="mb-6 space-y-4">
+              {stls.length > 0 && (
+                <STLModelDisplay key={selectedProject.id} stls={stls} />
               )}
+              {photos.length > 0 && <PhotoCarouselDisplay photos={photos} />}
             </div>
           )}
 
