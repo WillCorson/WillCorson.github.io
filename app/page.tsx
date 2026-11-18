@@ -1,62 +1,24 @@
 "use client";
-
-import Link from "next/link";
 import { 
-  ArrowRight, 
-  Github, 
-  Instagram, 
-  Linkedin, 
+  Instagram,
+  Linkedin,
   Mail, 
-  Download, 
   Phone,
-  ChevronLeft,
-  ChevronRight
 } from "lucide-react";
-import { useState, useEffect, Suspense } from "react";
-import { Canvas, useLoader } from "@react-three/fiber";
-import { OrbitControls, Stage, Html, useProgress } from "@react-three/drei";
-import { STLLoader } from "three-stdlib";
 import PhotoCarouselDisplay from "@/components/PhotoCarouselDisplay";
 
 const photos: string[] = ["/file.svg", "/globe.svg", "/next.svg"];
 
-// Sub-component to show a loading spinner while the STL fetches
-function Loader() {
-  return (
-    <Html center>
-      <div className="flex flex-col items-center justify-center gap-2">
-        {/* DaisyUI Spinner */}
-        <span className="loading loading-spinner loading-lg text-gray-400"></span>
-        <span className="text-gray-400 font-semibold text-sm animate-pulse">
-          Loading Model...
-        </span>
-      </div>
-    </Html>
-  );
-}
-
 export default function Home() {
-  const[currentSlide, setCurrentSlide] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === photos.length - 1 ? 0 : prev + 1));
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? photos.length - 1 : prev - 1));
-  };
-
   return (
     <div className="flex flex-col min-h-[80vh] animate-in fade-in slide-in-from-bottom-4 duration-700 max-w-6xl mx-auto px-4 py-12">
       
-      {/* --- SECTION 1: CENTERED NAME/HEADER --- */}
       <div className="text-center mb-12">
         <p className="text-xl text-gray-500 mt-4 font-semibold uppercase tracking-widest">
-          Will Corson
+          William Corson
         </p>
       </div>
 
-      {/* --- SECTION 2: PROFILE PICTURE --- */}
       <div className="flex justify-center mb-16 w-full">
         <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-2xl ring-1 ring-gray-100">
            <img 
@@ -67,7 +29,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* --- SECTION 3: ABOUT ME --- */}
       <div className="bg-gray-50 rounded-2xl p-8 md:p-12 mb-12">
           <h3 className="text-3xl font-extrabold tracking-tight text-gray-900 mb-6 border-b border-gray-200 pb-4">
             About Me
@@ -89,14 +50,23 @@ export default function Home() {
               organizations including but not limited to:
             </p>
             
-            {/* FIXED HTML STRUCTURE & LIST STYLING */}
+            <div className="mb-6 mt-4">
+              <p className="text-xl text-gray-500 mt-4 font-semibold uppercase tracking-widest">
+                Recent Projects
+              </p>
+              mri support system
+              
+              <div className="border-2 border-black rounded-xl mt-4">
+              <PhotoCarouselDisplay photos={photos} />
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
               <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
                 <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
                   <span className="w-8 h-1 bg-blue-500 rounded-full"></span>
                   Organizations
                 </h4>
-                {/* Styled Unordered List */}
                 <ul className="list-disc list-inside space-y-3 text-gray-600 marker:text-blue-500">
                   <li>President of Animation Club for 2 years, officer for 3</li>
                   <li>Relay For Life team captain 2022-2026, raised over $1000 in 2025</li>
@@ -110,60 +80,76 @@ export default function Home() {
                   <span className="w-8 h-1 bg-green-500 rounded-full"></span>
                   Activities
                 </h4>
-                {/* Styled Unordered List */}
                 <ul className="list-disc list-inside space-y-3 text-gray-600 marker:text-green-500">
+                  <li>EnableUC Member</li>
                   <li>Sailing</li>
                   <li>Hiking</li>
-                  <li>Team captain for a recreational Volleyball team</li>
                   <li>Creative Writing</li>
                 </ul>
               </div>
             </div>
-
           </div>
       </div>
-      <div className="mb-6 mt-4">
-        <p className="text-xl text-gray-500 mt-4 font-semibold uppercase tracking-widest">
-          Recent Projects
-        </p>
-        <div className="border-2 border-black rounded-xl mt-4">
-        <PhotoCarouselDisplay photos={photos} />
-        </div>
-      </div>
 
-      {/* --- SECTION 4: CONTACT AREA --- */}
       <div className="border-t border-gray-200 pt-12">
         <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Get in Touch</h3>
         <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-12">
-          
-          {/* Email Card */}
-          <a 
-            href="mailto:goalmaster8@gmail.com" 
-            className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all group"
-          >
-            <div className="bg-blue-50 p-4 rounded-full group-hover:bg-blue-100 transition-colors">
-              <Mail className="text-blue-600 w-6 h-6" />
-            </div>
-            <div>
-              <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">Email Me</p>
-              <p className="text-lg font-medium text-gray-900">goalmaster8@gmail.com</p>
-            </div>
-          </a>
+          <div className="flex flex-col gap-4">
+            <a 
+              href="mailto:goalmaster8@gmail.com" 
+              className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all group"
+            >
+              <div className="bg-blue-50 p-4 rounded-full group-hover:bg-blue-100 transition-colors">
+                <Mail className="text-blue-600 w-6 h-6" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">Email Me</p>
+                <p className="text-lg font-medium text-gray-900">goalmaster8@gmail.com</p>
+              </div>
+            </a>
 
-          {/* Phone Card */}
-          <div className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-green-300 transition-all group cursor-default">
-            <div className="bg-green-50 p-4 rounded-full group-hover:bg-green-100 transition-colors">
-              <Phone className="text-green-600 w-6 h-6" />
-            </div>
-            <div>
-              <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">Call Me</p>
-              <p className="text-lg font-medium text-gray-900">+1 (555) 123-4567</p>
+            <div className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-green-300 transition-all group cursor-default">
+              <div className="bg-green-50 p-4 rounded-full group-hover:bg-green-100 transition-colors">
+                <Phone className="text-green-600 w-6 h-6" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">Call Me</p>
+                <p className="text-lg font-medium text-gray-900">+1 (555) 123-4567</p>
+              </div>
             </div>
           </div>
 
+          <div className="flex flex-col gap-4">
+            <a 
+              href="https://www.linkedin.com/in/william-corson-a16667232/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all group"
+            >
+              <div className="bg-blue-50 p-4 rounded-full group-hover:bg-blue-100 transition-colors">
+                <Linkedin className="text-blue-600 w-6 h-6" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">LinkedIn</p>
+              </div>
+            </a>
+
+            <a 
+              href="https://www.instagram.com/bigtimber35" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-pink-300 transition-all group"
+            >
+              <div className="bg-pink-50 p-4 rounded-full group-hover:bg-pink-100 transition-colors">
+                <Instagram className="text-pink-600 w-6 h-6" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">Instagram</p>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
-
     </div>
   );
 }
