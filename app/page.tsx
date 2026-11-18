@@ -164,7 +164,7 @@ export default function Home() {
               </div>
               <div>
                 <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">Call Me</p>
-                <p className="text-lg font-medium text-gray-900">+1 (555) 123-4567</p>
+                <p className="text-lg font-medium text-gray-900">+1 (614) 813-6233</p>
               </div>
             </div>
           </div>
