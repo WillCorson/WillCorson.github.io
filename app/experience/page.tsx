@@ -60,6 +60,8 @@ export default function Resume() {
                   >
                     Experience
                   </button>
+
+                  {jobProjects.length > 0 && (
                   <button
                     id={`${job.id}-projects-tab`}
                     type="button"
@@ -75,6 +77,7 @@ export default function Resume() {
                   >
                     Projects ({jobProjects.length})
                   </button>
+                  )}
                 </div>
 
                 <div
@@ -143,6 +146,68 @@ export default function Resume() {
         selectedProject={selectedProject}
         onClose={() => setSelectedProject(null)}
       />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 border-t border-gray-200 pt-12 pb-12">
+              <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                  <span className="w-8 h-1 bg-blue-500 rounded-full"></span>
+                  Equipment Proficiencies
+                </h4>
+                <ul className="list-disc list-inside space-y-3 text-gray-600 marker:text-blue-500">
+                  <li>SLS</li>
+                    <ul className="list-[square] list-inside pl-5 text-gray-600 marker:text-blue-500">
+                      <li>Fuse 1+ System</li>
+                    </ul>
+                  <li>SLA</li>
+                    <ul className="list-[square] list-inside pl-5 text-gray-600 marker:text-blue-500">
+                      <li>Form 3L</li>
+                      <li>Form 3</li>
+                      <li>Form 4</li>
+                    </ul>
+                  <li>Polyjet</li>
+                    <ul className="list-[square] list-inside pl-5 text-gray-600 marker:text-blue-500">
+                      <li>MedJet J5</li>
+                    </ul>
+                  <li>FDM</li>
+                    <ul className="list-[square] list-inside pl-5 text-gray-600 marker:text-blue-500">
+                      <li>Stratasys Fortus</li>
+                      <li>H2S</li>
+                      <li>H2D</li>
+                      <li>A1</li>
+                      <li>P1P</li>
+                      <li>BMD Studio System</li>
+                      <li>XL</li>
+                      <li>2+ Connect</li>
+                    </ul>
+                  <li>Epilog CO2 & Fiber Lasers</li>
+                  <li>Xtool Lasers</li>
+                  <li>UV Printing</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                  <span className="w-8 h-1 bg-green-500 rounded-full"></span>
+                  Software Proficiencies
+                </h4>
+                <ul className="list-disc list-inside space-y-3 text-gray-600 marker:text-green-500">
+                  <li>Fusion 360</li>
+                  <li>Blender</li>
+                  <li>Autodesk Inventor</li>
+                  <li>Siemens NX</li>
+                  <li>Solidworks</li>
+                  <li>Adobe Illustrator</li>
+                  <li>Adobe Photoshop</li>
+                  <li>Bambu Labs Slicer</li>
+                  <li>Prusa Slicer</li>
+                  <li>Orca Slicer</li>
+                  <li>Cura Slicer</li>
+                  <li>Epilog Laser Software</li>
+                  <li>Microsoft Suite</li>
+                  <li>MatLAB</li>
+                </ul>
+              </div>
+            </div>
     </div>
   );
 }
