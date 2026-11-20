@@ -220,6 +220,7 @@ export const PROJECTS: Project[] =[
   period: string;
   description: string[];
   projectIds: string[];
+  skills: string[];
 }
 
 export interface Education {
@@ -247,6 +248,7 @@ export const EXPERIENCE: Experience[] = [
       "3D Printed PVC Staff Prop",
       "Lake Erie Islands Topographical Map",
     ],
+    skills: ["3D Printing", "CAD Design", "Prototyping", "Teaching"]
   },
   {
     id: "cincinnati-childrens",
@@ -271,6 +273,7 @@ export const EXPERIENCE: Experience[] = [
       "stethoscope-teaching-kit",
       "coverslip-holder",
     ],
+    skills: ["3D Printing", "CAD Design", "Prototyping", "Medical Device Design"]
   },
   {
     id: "mitsubishi-electric-automotive",
@@ -285,6 +288,7 @@ export const EXPERIENCE: Experience[] = [
     projectIds: [
       
     ],
+    skills: ["3D Printing", "CAD Design", "Prototyping", "Manufacturing"]
   },
 ];
 
@@ -292,7 +296,7 @@ export const EDUCATION: Education[] = [
   {
     degree: "Bachelor's Degree in Mechanical Engineering Technology",
     institution: "University of Cincinnati",
-    period: "August 2021 - May 2026"
+    period: "August 2021 - May 2027"
   },
   {
     degree: "Honors Stem Diploma",
