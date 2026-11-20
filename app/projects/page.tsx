@@ -70,7 +70,7 @@ export default function Projects() {
                 <li key={index}>
                   {index !== 0 && <hr className="bg-gray-200" />}
 
-                  <div className="timeline-start mb-10 md:mb-0 px-4 w-full md:w-1/2 flex flex-col justify-center md:items-end">
+                  <div className="timeline-start mb-5 md:mb-10 px-4 w-full md:w-1/2 flex flex-col justify-center md:items-end">
                     {isEven ? (
                       <button 
                         onClick={() => handleProjectClick(project)}
@@ -155,14 +155,6 @@ export default function Projects() {
                           {t}
                         </span>
                       ))}
-                    </div>
-
-                    <div className="flex gap-4">
-                      {project.links.demo && (
-                        <a href={project.links.demo} className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-blue-600">
-                          <ExternalLink className="w-4 h-4" /> Live Demo
-                        </a>
-                      )}
                     </div>
                   </div>
                 </AccordionContent>
