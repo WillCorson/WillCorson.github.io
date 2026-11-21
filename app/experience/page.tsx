@@ -139,30 +139,6 @@ export default function Resume() {
         </div>
       </section>
 
-      {/* Education Section */}
-      <section>
-        <h2 className="text-xl font-semibold text-gray-900 mb-6">Education</h2>
-        <div className="space-y-4">
-          
-          {EDUCATION.map((edu, index) => (
-            <div 
-              key={index} 
-              className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm transition-shadow hover:shadow-md"
-            >
-              <h3 className="text-lg font-bold text-gray-900">{edu.degree}</h3>
-              <div className="text-gray-600">{edu.institution}</div>
-              <div className="text-sm text-gray-400 mt-1">{edu.period}</div>
-            </div>
-          ))}
-
-        </div>
-      </section>
-
-      <Modal
-        selectedProject={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 border-t border-gray-200 pt-12 pb-12">
               <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
                 <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
@@ -224,6 +200,30 @@ export default function Resume() {
                 </ul>
               </div>
             </div>
+
+      {/* Education Section */}
+      <section>
+        <h2 className="text-xl font-semibold text-gray-900 mb-6">Education</h2>
+        <div className="space-y-4">
+          
+          {EDUCATION.map((edu, index) => (
+            <div 
+              key={index} 
+              className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm transition-shadow hover:shadow-md"
+            >
+              <h3 className="text-lg font-bold text-gray-900">{edu.degree}</h3>
+              <div className="text-gray-600">{edu.institution}</div>
+              <div className="text-sm text-gray-400 mt-1">{edu.period}</div>
+            </div>
+          ))}
+
+        </div>
+      </section>
+
+      <Modal
+        selectedProject={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </div>
   );
 }
