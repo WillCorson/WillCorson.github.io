@@ -248,7 +248,7 @@ export const EXPERIENCE: Experience[] = [
       "3d-printed-pvc-staff-prop",
       "laser-cut-lake-erie-islands-map",
     ],
-    skills: ["Rapid Prototyping", "Additive Manufacturing", "CAD Design", "Teaching", "Curriculum Development", "Customer Facing"]
+    skills: ["Rapid Prototyping", "Additive Manufacturing", "CAD Design", "Teaching", "Curriculum Development", "Customer Facing, Adobe Illustrator", "Adober Photoshop"]
 
   },
   {
@@ -289,7 +289,7 @@ export const EXPERIENCE: Experience[] = [
     projectIds: [
       
     ],
-    skills: ["3D Printing", "CAD Design", "Prototyping", "Manufacturing"]
+    skills: ["Additive Manufacturing", "CAD Design", "Prototyping", "Manufacturing", "Process Improvement", "Iterative Design" ]
   },
 ];
 
