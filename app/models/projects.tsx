@@ -245,8 +245,8 @@ export const EXPERIENCE: Experience[] = [
     ],
     projectIds: [
       "Laser-Cutting-to-UV-Workshop",
-      "3D Printed PVC Staff Prop",
-      "Lake Erie Islands Topographical Map",
+      "3d-printed-pvc-staff-prop",
+      "laser-cut-lake-erie-islands-map",
     ],
     skills: ["3D Printing", "CAD Design", "Prototyping", "Teaching"]
   },
@@ -263,12 +263,12 @@ export const EXPERIENCE: Experience[] = [
       "Saved the Hospital thousands with my MRI Coil Support System Project.",
     ],
     projectIds: [
-      "calibration-tokens-for-verifying-biocompatible-resin",
+      "Calibration-Tokens-For-Verifying-Biocompatible-Resin",
       "custom-childrens-ear-molds",
-      "Mri-Coil-Support-System",
-      "Custom-ChildLife-Keychains",
-      "Frog-Platform",
-      "Glitter-Mixing-Caps",
+      "MRI-Coil-Support-System",
+      "custom-childlife-keychains",
+      "frog-platform",
+      "glitter-mixing-caps",
       "custom-syringe-cap",
       "stethoscope-teaching-kit",
       "coverslip-holder",

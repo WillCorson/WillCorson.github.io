@@ -123,7 +123,6 @@ export default function Home() {
                   <li>President of Animation Club for 2 years, officer for 3</li>
                   <li>Relay For Life team captain 2022-2026, raised over $1000 in 2025</li>
                   <li>Team captain for a recreational Volleyball team</li>
-                  <li>University of Cincinnati's Student Government</li>
                 </ul>
               </div>
 
@@ -146,7 +145,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-12">
           <div className="flex flex-col gap-4">
             <a 
-              href="mailto:goalmaster8@gmail.com" 
+              href="mailto:corsonwt@mail.uc.edu" 
               className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all group"
             >
               <div className="bg-blue-50 p-4 rounded-full group-hover:bg-blue-100 transition-colors">
@@ -154,7 +153,7 @@ export default function Home() {
               </div>
               <div>
                 <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">Email Me</p>
-                <p className="text-lg font-medium text-gray-900">goalmaster8@gmail.com</p>
+                <p className="text-lg font-medium text-gray-900">corsonwt@mail.uc.edu</p>
               </div>
             </a>
 
