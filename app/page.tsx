@@ -27,11 +27,11 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-[80vh] animate-in fade-in slide-in-from-bottom-4 duration-700 max-w-6xl mx-auto px-4 py-12">
       
-      <div className="text-center mb-12">
+      {/* <div className="text-center mb-12">
         <p className="text-xl text-gray-500 mt-4 font-semibold uppercase tracking-widest">
           Will Corson
         </p>
-      </div>
+      </div> */}
 
       <div className="flex justify-center mb-16 w-full">
         <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-2xl ring-1 ring-gray-100">
@@ -44,31 +44,11 @@ export default function Home() {
       </div>
 
       <div className="bg-gray-50 rounded-2xl p-8 md:p-12 mb-12">
-          <h3 className="text-3xl font-extrabold tracking-tight text-gray-900 mb-6 border-b border-gray-200 pb-4">
-            About Me
-          </h3>
-          <div className="prose prose-lg text-gray-600 max-w-none space-y-6">
-            <p>
-              I am a passionate Designer/Engineer with extensive experience in 3d design and rapid prototyping. I specialize in bringing ideas into reality, 
-              whether that be conceptual or fictional and adding functionality to it. I am looking for a position that will make me think creatively and challenge 
-              me to grow as a designer. I currently attend the University of Cincinnati College of Engineering studying Mechanical Engineering Technology and 
-              pursuing a Creative Writing Certificate.
-            </p>
-            <p>
-              For most of my career thus far I have focused myself on honing my prototyping skills by mastering CAD/3D design and additive/subtractive 
-              manufacturing processes which I can use to bring prototypes to life! This can be seen through my projects both professional & personal 
-              ranging from Needle caps meant for wide use among hospital staff to functional props from stories and games. 
-            </p>
-            <p>
-              Outside of my career and personal projects I also get up to a variety of activities and actively participate in a variety of clubs & 
-              organizations including but not limited to:
-            </p>
-            
-              <h3 className="text-xl text-gray-500 mt-4 font-semibold uppercase tracking-widest">
-                Recent Projects
-              </h3>
+            <h3 className="text-3xl text-gray-900 mt-4 font-semibold uppercase tracking-widest">
+              Recent Projects
+            </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+            <div className="grid grid-cols-1 mb-6 sm:grid-cols-2 gap-6 mt-4">
               {recentProjects.map((project) => {
                 const previewImage = project.displayFiles.find((file) =>
                   /\.(jpe?g|png|gif|webp|avif|bmp)$/i.test(file)
@@ -109,6 +89,26 @@ export default function Home() {
               })}
             </div>
 
+          <h3 className="text-3xl font-extrabold tracking-tight text-gray-500 mb-6 border-b border-gray-200 pb-4">
+            About Me
+          </h3>
+          <div className="prose prose-lg text-gray-600 max-w-none space-y-6">
+            <p>
+              I am a passionate Designer/Engineer with extensive experience in 3d design and rapid prototyping. I specialize in bringing ideas into reality, 
+              whether that be conceptual or fictional and adding functionality to it. I am looking for a position that will make me think creatively and challenge 
+              me to grow as a designer. I currently attend the University of Cincinnati College of Engineering studying Mechanical Engineering Technology and 
+              pursuing a Creative Writing Certificate.
+            </p>
+            <p>
+              For most of my career thus far I have focused myself on honing my prototyping skills by mastering CAD/3D design and additive/subtractive 
+              manufacturing processes which I can use to bring prototypes to life! This can be seen through my projects both professional & personal 
+              ranging from Needle caps meant for wide use among hospital staff to functional props from stories and games. 
+            </p>
+            <p>
+              Outside of my career and personal projects I also get up to a variety of activities and actively participate in a variety of clubs & 
+              organizations including but not limited to:
+            </p>
+
             
           </div>
       </div>
@@ -122,7 +122,7 @@ export default function Home() {
                 <ul className="list-disc list-inside space-y-3 text-gray-600 marker:text-blue-500">
                   <li>President of Animation Club for 2 years, officer for 3</li>
                   <li>Relay For Life team captain 2022-2026, raised over $1000 in 2025</li>
-                  <li>Team captain for a recreational Volleyball team</li>
+                  <li>EnableUC Member</li>
                 </ul>
               </div>
 
@@ -132,10 +132,12 @@ export default function Home() {
                   Activities
                 </h4>
                 <ul className="list-disc list-inside space-y-3 text-gray-600 marker:text-green-500">
-                  <li>EnableUC Member</li>
+                  <li>Team captain for a recreational Volleyball team</li>
                   <li>Sailing</li>
                   <li>Hiking</li>
                   <li>Creative Writing</li>
+                  <li>Cosplay</li>
+                  <li>Dice Making</li>
                 </ul>
               </div>
             </div>
