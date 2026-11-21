@@ -248,7 +248,8 @@ export const EXPERIENCE: Experience[] = [
       "3d-printed-pvc-staff-prop",
       "laser-cut-lake-erie-islands-map",
     ],
-    skills: ["3D Printing", "CAD Design", "Prototyping", "Teaching"]
+    skills: ["Rapid Prototyping", "Additive Manufacturing", "CAD Design", "Teaching", "Curriculum Development", "Customer Facing"]
+
   },
   {
     id: "cincinnati-childrens",
@@ -273,7 +274,7 @@ export const EXPERIENCE: Experience[] = [
       "stethoscope-teaching-kit",
       "coverslip-holder",
     ],
-    skills: ["3D Printing", "CAD Design", "Prototyping", "Medical Device Design"]
+    skills: ["Project Management", "CAD Design", "Prototyping", "Design for Medical Applications", "Process Improvement", "Customer Facing", "Additive Manufacturing", "Iterative Design"]
   },
   {
     id: "mitsubishi-electric-automotive",
