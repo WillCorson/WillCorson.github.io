@@ -94,7 +94,7 @@ export const PROJECTS: Project[] =[
     title: "3D Modeled Prop Sword",
     year: "May 2025 - January 2026",
     category: "Personal Project",
-    description: "Designed a dual 3D printed sword prop with LED strips inside the blade that are coded to display a different effect with each press of a button.",
+    description: "Designed two 3D printed sword props one incorporating LED strips inside the blade that are coded to display a different effect with each press of a button. And the other meant to be SLA printed as a keychain or as a large five foot long prop.",
     tech:["Blender", "FDM 3D Printing", "Electronics"],
     links: { demo: "#" },
     displayFiles:["/STL/trueShikaiQuincy.stl", "/STL/trueShikaiQuincyExploded.stl", "/STL/hornets.stl"],
