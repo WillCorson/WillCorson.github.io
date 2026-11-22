@@ -25,7 +25,7 @@ export const PROJECTS: Project[] =[
   },
   {
     id: "Calibration-Tokens-For-Verifying-Biocompatible-Resin",
-    title: "Calibration Tokens For Verifying Biocompatible Resin",
+    title: "Calibration Tokens for Verifying Biocompatible Resin",
     year: "March 2026 - April 2026",
     category: "Cincinnati Children's Hospital",
     description: "I worked with the Cincinnati Children's Hospital 3D Print Lab to create calibration tokens for verifying the accuracy of Formlabs biocompatible resins they offer. The tokens were designed to be printed on a Formlabs Form 3 and 4 printer, post processed in the same conditions followed by sterilization. At each of these steps they were measured to ensure that the prints were within the required tolerances for medical applications and assess the dimensional changes between each step. The findings will eventually be published in a research paper about the use of 3D printed surgical guides I will be labeled co-author of.",
