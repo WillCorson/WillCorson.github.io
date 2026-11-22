@@ -255,7 +255,7 @@ export const EXPERIENCE: Experience[] = [
     id: "cincinnati-childrens",
     company: "Cincinnati Children's Hospital Medical Center",
     role: "3D Print Lab and Engineering Co-op",
-    period: "May 2025 - August 2025",
+    period: "May 2025 - May 2026",
     description: [
       "A 3D printing technician and rapid prototyping position focused on supporting clinical engineering, doctors, patients and research teams by designing and producing quick, sustainable long term solutions to problems that arise.",
       "Operated and maintained additive manufacturing equipment including Formlabs Form 3/3L/4 (SLA), Stratasys Fortus 250mc & Prusa XL (FDM) and a Stratasys Medijet J5 (Polyjet).",
