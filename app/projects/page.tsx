@@ -124,13 +124,13 @@ export default function Projects() {
               >
                 <AccordionTrigger className="cursor-pointer hover:no-underline py-4">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between w-full text-left pr-4">
-                    <div className="flex items-center gap-3">
-                      <span className="cursor-pointer font-bold text-gray-900 text-lg">{project.title}</span>
+                    <div className="flex items-center w-full gap-3">
+                      <span className="cursor-pointer font-bold max-w-2/3 text-gray-900 text-lg">{project.title}</span>
                       <span className="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full hidden sm:inline-block">
                         {project.category}
                       </span>
                     </div>
-                    <span className="text-sm text-gray-400 font-mono mt-1 sm:mt-0">{project.year}</span>
+                    <span className="text-sm max-w-1/6 text-gray-400 text-right font-mono mt-1 sm:mt-0">{project.year}</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="pb-4 text-gray-600">

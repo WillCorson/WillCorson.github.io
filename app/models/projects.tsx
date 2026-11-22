@@ -25,7 +25,7 @@ export const PROJECTS: Project[] =[
   },
   {
     id: "Calibration-Tokens-For-Verifying-Biocompatible-Resin",
-    title: "Calibration Tokens For Verifying Biocompatible Resin",
+    title: "Calibration Tokens for Verifying Biocompatible Resin",
     year: "March 2026 - April 2026",
     category: "Cincinnati Children's Hospital",
     description: "I worked with the Cincinnati Children's Hospital 3D Print Lab to create calibration tokens for verifying the accuracy of Formlabs biocompatible resins they offer. The tokens were designed to be printed on a Formlabs Form 3 and 4 printer, post processed in the same conditions followed by sterilization. At each of these steps they were measured to ensure that the prints were within the required tolerances for medical applications and assess the dimensional changes between each step. The findings will eventually be published in a research paper about the use of 3D printed surgical guides I will be labeled co-author of.",
@@ -94,7 +94,7 @@ export const PROJECTS: Project[] =[
     title: "3D Modeled Prop Sword",
     year: "May 2025 - January 2026",
     category: "Personal Project",
-    description: "Designed a dual 3D printed sword prop with LED strips inside the blade that are coded to display a different effect with each press of a button.",
+    description: "Designed two 3D printed sword props one incorporating LED strips inside the blade that are coded to display a different effect with each press of a button. And the other meant to be SLA printed as a keychain or as a large five foot long prop.",
     tech:["Blender", "FDM 3D Printing", "Electronics"],
     links: { demo: "#" },
     displayFiles:["/STL/trueShikaiQuincy.stl", "/STL/trueShikaiQuincyExploded.stl", "/STL/hornets.stl"],
@@ -245,10 +245,11 @@ export const EXPERIENCE: Experience[] = [
     ],
     projectIds: [
       "Laser-Cutting-to-UV-Workshop",
-      "3D Printed PVC Staff Prop",
-      "Lake Erie Islands Topographical Map",
+      "3d-printed-pvc-staff-prop",
+      "laser-cut-lake-erie-islands-map",
     ],
-    skills: ["3D Printing", "CAD Design", "Prototyping", "Teaching"]
+    skills: ["Rapid Prototyping", "Additive Manufacturing", "CAD Design", "Teaching", "Curriculum Development", "Customer Facing, Adobe Illustrator", "Adober Photoshop"]
+
   },
   {
     id: "cincinnati-childrens",
@@ -263,17 +264,17 @@ export const EXPERIENCE: Experience[] = [
       "Saved the Hospital thousands with my MRI Coil Support System Project.",
     ],
     projectIds: [
-      "calibration-tokens-for-verifying-biocompatible-resin",
+      "Calibration-Tokens-For-Verifying-Biocompatible-Resin",
       "custom-childrens-ear-molds",
-      "Mri-Coil-Support-System",
-      "Custom-ChildLife-Keychains",
-      "Frog-Platform",
-      "Glitter-Mixing-Caps",
+      "MRI-Coil-Support-System",
+      "custom-childlife-keychains",
+      "frog-platform",
+      "glitter-mixing-caps",
       "custom-syringe-cap",
       "stethoscope-teaching-kit",
       "coverslip-holder",
     ],
-    skills: ["3D Printing", "CAD Design", "Prototyping", "Medical Device Design"]
+    skills: ["Project Management", "CAD Design", "Prototyping", "Design for Medical Applications", "Process Improvement", "Customer Facing", "Additive Manufacturing", "Iterative Design"]
   },
   {
     id: "mitsubishi-electric-automotive",
@@ -288,7 +289,7 @@ export const EXPERIENCE: Experience[] = [
     projectIds: [
       
     ],
-    skills: ["3D Printing", "CAD Design", "Prototyping", "Manufacturing"]
+    skills: ["Additive Manufacturing", "CAD Design", "Prototyping", "Manufacturing", "Process Improvement", "Iterative Design" ]
   },
 ];
 
