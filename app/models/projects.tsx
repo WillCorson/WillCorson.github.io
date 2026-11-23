@@ -9,7 +9,7 @@ export const PROJECTS: Project[] =[
     description: "I am creating a custom silicone dice mold that incorporates custom symbols on each die. The design process steps involve modeling the dice, SLA 3D printing, polishing the dice, casting the 3D printeddice in silicone, removing the dice from the mold and finally casting the molds with resin.",
     tech:["Blender", "SLA 3D Printing", "Mold Making", "Resin Casting", "Post Processing"],
     links: { demo: "#" },
-    displayFiles: ["/STL/CustomDice.STL"],
+    displayFiles: ["/STL/CustomDice.stl"],
     stlCarousel: true
   },
   {
@@ -31,7 +31,7 @@ export const PROJECTS: Project[] =[
     description: "I worked with the Cincinnati Children's Hospital 3D Print Lab to create calibration tokens for verifying the accuracy of Formlabs biocompatible resins they offer. The tokens were designed to be printed on a Formlabs Form 3 and 4 printer, post processed in the same conditions followed by sterilization. At each of these steps they were measured to ensure that the prints were within the required tolerances for medical applications and assess the dimensional changes between each step. The findings will eventually be published in a research paper about the use of 3D printed surgical guides I will be labeled co-author of.",
     tech:["Fusion 360", "SLA 3D Printing", "Material Verification", "Research",],
     links: { demo: "#" },
-    displayFiles: ["/STL/Calibration Token Half Circle 5mm Updated.stl", "/STL/Calibration Token Half Circle 10mm Updated.stl", "/STL/Calibration Token Half Circle 15mm Updated.stl", "/STL/Calibration Token Rectanglular Prism 5mm updated.stl", "/STL/Calibration Token Rectanglular Prism 10mm updated.stl", "/STL/Calibration Token Rectanglular Prism 15mm updated.stl", "/STL/Calibration Token Right Angle 5mm updated.stl", "/STL/Calibration Token Right Angle 10mm updated.stl", "/STL/Calibration Token Right Angle 15mm updated.stl"],
+    displayFiles: ["/STL/Calibration Token Half Circle 5mm Updated.stl", "/STL/Calibration Token Half Circle 10mm Updated.stl", "/STL/Calibration Token Half Circle 15mm Updated.stl", "/STL/Calibration Token Rectanglular Prism 5mm updated.stl", "/STL/Calibration Token Rectanglular Prism 10mm Updated.stl", "/STL/Calibration Token Rectanglular Prism 15mm Updated.stl", "/STL/Calibration Token Right Angle 5mm updated.stl", "/STL/Calibration Token Right Angle 10mm updated.stl", "/STL/Calibration Token Right Angle 15mm updated.stl"],
     stlCarousel: true
   },
   {
@@ -42,7 +42,7 @@ export const PROJECTS: Project[] =[
     description: "I aided mass production for custom ear molds in our audiology department. The process utilized SLA printed molds, post processing, and silicone injecting before giving a lacquer finish. During my time at cincinnati childrens I completed over 1000 ear molds for kids and helped improve the process of making them.",
     tech:["SLA 3D Printing", "Custom Injection Molding", "Process Improvement", "Customer Facing", "Mass Production "],
     links: { demo: "#" },
-    displayFiles: ["/earmold0.jpg", "/earmold1.JPEG", "/earmold2.JPEG", "/earmold3.JPEG", "/earmold4.MP4", "/earmold5.JPEG", "/earmold6.JPEG", "/earmold7.JPEG", "/earmold8.JPEG", "/earmold9.JPEG", "/earmold10.JPEG", "/earmold11.JPEG", "/earmold12.JPEG", "/earmold13.JPEG", "/earmold14.JPEG", "/earmold15.JPEG", "/earmold16.mp4"],
+    displayFiles: ["/Earmold0.jpg", "/Earmold1.JPEG", "/Earmold2.JPEG", "/Earmold3.JPEG", "/Earmold4.MP4", "/Earmold5.JPEG", "/Earmold6.JPEG", "/Earmold7.JPEG", "/Earmold8.JPEG", "/Earmold9.JPEG", "/Earmold10.JPEG", "/Earmold11.JPEG", "/Earmold12.JPEG", "/Earmold13.JPEG", "/Earmold14.JPEG", "/Earmold15.JPEG", "/Earmold16.MP4"],
     stlCarousel: false
   },
     {
@@ -53,7 +53,7 @@ export const PROJECTS: Project[] =[
     description: "Created an in house MRI Coil support system to keep patients steady, reduce motion artifacts and optimize scans. This project saved the hospital thousands with its reproducibility, saftey improvements and long lasting design, drastically improving the off the market solution that was currently being used. The design was optimized to be easy to produce and replicated for all of the MRI's across the hospital to use. The height is easily adjustible to help technicians adjust for kids of all ages and sizes. Safety and durability was also a primary design focus to fix issues with the previous solution.",
     tech:["Fusion 360", "Laser Cutting", "SLA 3D Printing", "Adobe Illustrator", "Design for Safety", "Cost Saving", "Project Management"],
     links: { demo: "#" },
-    displayFiles: ["/Support System in Use (2).jpg", "/Dissasembled Support System.jpg", "/Support System on bed.jpg", "/Support System in Use.jpg", ],
+    displayFiles: ["/Support System in Use (2).jpg", "/Dissasembled Support System.jpg", "/Support System on bed.jpg", "/Support System In Use.jpg", ],
     stlCarousel: false
   },
   {
@@ -108,7 +108,7 @@ export const PROJECTS: Project[] =[
     description: "For my intro to additive manufacturing course I created a pinewood derby car utilizing SLS printing and Nylon powder, placing second in the competition. I designed the car to be aerodynamic and lightweight while also being visually appealing.",
     tech:["Blender", "SLS 3D Printing", "Post Processing"],
     links: { demo: "#" },
-    displayFiles: ["/Speed Racer.JPEG", "/Speed Racer.JPEG", "/Derby Race.MP4", "/OffPrint.MP4", "/Sifting.MP4", "/Sandblast.MP4"],
+    displayFiles: ["/Speed Racer.JPEG", "/Speed Racer.JPEG", "/Derby Race.MP4", "/OffPrint.MP4", "/Sifting.mp4", "/Sandblast.MP4"],
     stlCarousel: false
   },
   {
@@ -152,7 +152,7 @@ export const PROJECTS: Project[] =[
     description: "Leveraged Autodesk Fusion360 to fully 3D model and print parts to make a 6ft 4in fantasy staff. The staff head was designed to screw on for easy transport and maneuverability. Multiple parts were utilized to hide the connection points between the PVC shaft & the staff head.",
     tech: ["Fusion 360", "FDM 3D Printing", "Project Management", "Post Processing"],
     links: { demo: "#" },
-    displayFiles: ["/STL/FrierenStaff.stl", "/Frieren1.JPEG", "/Frieren2.JPEG", "/Frieren3.JPEG", "Frieren4.JPEG", "Frieren5.JPEG"],
+    displayFiles: ["/STL/FrierenStaff.stl", "/Frieren1.JPEG", "/Frieren2.JPEG", "/Frieren3.JPEG", "/Frieren4.JPEG", "/Frieren5.JPEG"],
     stlCarousel: true
   },
   {
