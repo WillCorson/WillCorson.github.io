@@ -11,7 +11,7 @@ export default function VideoCarouselDisplay({ videos }: { videos: string[] }) {
   if (!videos || videos.length === 0) return null;
 
   return (
-    <div className="w-full relative aspect-video bg-gray-100 rounded-xl overflow-hidden shadow-lg border border-gray-200 group">
+    <div className="group relative aspect-video w-full overflow-hidden rounded-2xl border border-ocean-100 bg-ocean-100/50 shadow-[0_16px_40px_rgba(3,4,94,0.08)]">
       <Carousel className="w-full h-full">
         <CarouselContent className="h-full ml-0">
           {videos.map((video, index) => (

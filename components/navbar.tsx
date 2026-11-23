@@ -14,11 +14,11 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-ocean-100/80 bg-white/85 shadow-[0_4px_24px_rgba(3,4,94,0.04)] backdrop-blur-md">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <Link href="/" className="font-bold text-xl text-gray-900">
+            <Link href="/" className="font-bold text-xl tracking-tight text-ocean-950">
               Will Corson
             </Link>
           </div>
@@ -32,8 +32,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`flex items-center space-x-2 text-sm font-medium transition-colors ${
                     isActive
-                      ? "text-blue-600"
-                      : "text-gray-500 hover:text-gray-900"
+                      ? "text-ocean-700"
+                      : "text-slate-500 hover:text-ocean-950"
                   }`}
                 >
                   <Icon size={18} />
