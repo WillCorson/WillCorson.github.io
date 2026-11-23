@@ -13,16 +13,16 @@ export default function Resume() {
   return (
     <div className="space-y-12 max-w-3xl animate-in fade-in slide-in-from-bottom-4 duration-700">
       <header>
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Resume</h1>
-        <p className="text-gray-600">My professional journey and education, starting with the most recent.</p>
+        <h1 className="mb-2 text-3xl font-bold tracking-tight text-ocean-950">Resume</h1>
+        <p className="text-slate-600">My professional journey and education, starting with the most recent.</p>
       </header>
 
       {/* Experience Section */}
       <section>
-        <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
+        <h2 className="mb-6 flex items-center text-xl font-semibold text-ocean-950">
           Work Experience
         </h2>
-        <div className="border-l-2 border-gray-200 ml-3 space-y-12 pl-8 relative pb-2">
+        <div className="relative ml-3 space-y-12 border-l-2 border-ocean-100 pb-2 pl-8">
           
           {EXPERIENCE.map((job, index) => {
             const activeTab = activeTabs[job.id] ?? "experience";
@@ -32,18 +32,18 @@ export default function Resume() {
               <div key={job.id} className="relative">
                 <span
                   className={`absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white ${
-                    index === 0 ? "bg-blue-600" : "bg-gray-300"
+                    index === 0 ? "bg-ocean-500" : "bg-slate-300"
                   }`}
                 />
 
-                <h3 className="text-lg font-bold text-gray-900">{job.company}</h3>
-                <div className="text-blue-600 font-medium mb-1">{job.role}</div>
-                <div className="text-sm text-gray-500 mb-4">{job.period}</div>
+                <h3 className="text-lg font-bold text-ocean-950">{job.company}</h3>
+                <div className="mb-1 font-medium text-ocean-700">{job.role}</div>
+                <div className="mb-4 text-sm text-slate-500">{job.period}</div>
 
                 <div
                   role="tablist"
                   aria-label={`${job.company} details`}
-                  className="flex gap-4 border-b border-gray-200 mb-4"
+                  className="mb-4 flex gap-4 border-b border-ocean-100"
                 >
                   <button
                     id={`${job.id}-experience-tab`}
@@ -54,8 +54,8 @@ export default function Resume() {
                     onClick={() => setActiveTabs((tabs) => ({ ...tabs, [job.id]: "experience" }))}
                     className={`pb-2 text-sm font-medium border-b-2 ${
                       activeTab === "experience"
-                        ? "border-blue-600 text-blue-600"
-                        : "border-transparent text-gray-500 hover:text-gray-900"
+                        ? "border-ocean-700 text-ocean-700"
+                        : "border-transparent text-slate-500 hover:text-ocean-950"
                     }`}
                   >
                     Experience
@@ -71,8 +71,8 @@ export default function Resume() {
                     onClick={() => setActiveTabs((tabs) => ({ ...tabs, [job.id]: "projects" }))}
                     className={`pb-2 text-sm font-medium border-b-2 ${
                       activeTab === "projects"
-                        ? "border-blue-600 text-blue-600"
-                        : "border-transparent text-gray-500 hover:text-gray-900"
+                        ? "border-ocean-700 text-ocean-700"
+                        : "border-transparent text-slate-500 hover:text-ocean-950"
                     }`}
                   >
                     Projects ({jobProjects.length})
@@ -86,23 +86,23 @@ export default function Resume() {
                   aria-labelledby={`${job.id}-experience-tab`}
                   hidden={activeTab !== "experience"}
                 >
-                  <ul className="list-disc pl-5 text-gray-900 space-y-2">
+                  <ul className="list-disc space-y-2 pl-5 text-slate-900 marker:text-ocean-500">
                     {job.description.map((point) => (
                       <li key={point}>
-                        <span className="text-gray-600">{point}</span>
+                        <span className="text-slate-600">{point}</span>
                       </li>
                     ))}
                   </ul>
 
                   <div className="mt-4">
-                    <div className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-gray-500">
+                    <div className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
                       Skills Used
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {job.skills.map((skill) => (
                         <span
                           key={`${job.id}-${skill}`}
-                          className="inline-flex items-center rounded-full bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-200"
+                          className="inline-flex items-center rounded-full bg-ocean-100 px-2.5 py-1 text-xs font-medium text-ocean-950 ring-1 ring-inset ring-ocean-300"
                         >
                           {skill}
                         </span>
@@ -124,10 +124,10 @@ export default function Resume() {
                       key={project.id}
                       type="button"
                       onClick={() => setSelectedProject(project)}
-                      className="text-left rounded-lg border border-gray-200 bg-white p-4 hover:border-blue-300 hover:shadow-sm transition-all"
+                      className="rounded-xl border border-slate-200 bg-white/85 p-4 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-ocean-300 hover:shadow-md"
                     >
-                      <span className="block font-semibold text-gray-900">{project.title}</span>
-                      <span className="block text-sm text-gray-500 mt-1">
+                      <span className="block font-semibold text-ocean-950">{project.title}</span>
+                      <span className="mt-1 block text-sm text-slate-500">
                         {project.year} · {project.category}
                       </span>
                     </button>
@@ -139,29 +139,29 @@ export default function Resume() {
         </div>
       </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 border-t border-gray-200 pt-12 pb-12">
-              <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                  <span className="w-8 h-1 bg-blue-500 rounded-full"></span>
+      <div className="mt-6 grid grid-cols-1 gap-8 border-t border-ocean-100 pt-12 pb-12 md:grid-cols-2">
+              <div className="rounded-2xl border border-ocean-100/80 bg-white/85 p-6 shadow-[0_10px_30px_rgba(3,4,94,0.05)]">
+                <h4 className="mb-4 flex items-center gap-2 text-xl font-bold text-ocean-950">
+                  <span className="h-1 w-8 rounded-full bg-ocean-500"></span>
                   Equipment Proficiencies
                 </h4>
-                <ul className="list-disc list-inside space-y-3 text-gray-600 marker:text-blue-500">
+                <ul className="list-disc list-inside space-y-3 text-slate-600 marker:text-ocean-500">
                   <li>SLS</li>
-                    <ul className="list-[square] list-inside pl-5 text-gray-600 marker:text-blue-500">
+                    <ul className="list-[square] list-inside pl-5 text-slate-600 marker:text-ocean-500">
                       <li>Fuse 1+ System</li>
                     </ul>
                   <li>SLA</li>
-                    <ul className="list-[square] list-inside pl-5 text-gray-600 marker:text-blue-500">
+                    <ul className="list-[square] list-inside pl-5 text-slate-600 marker:text-ocean-500">
                       <li>Form 3L</li>
                       <li>Form 3</li>
                       <li>Form 4</li>
                     </ul>
                   <li>Polyjet</li>
-                    <ul className="list-[square] list-inside pl-5 text-gray-600 marker:text-blue-500">
+                    <ul className="list-[square] list-inside pl-5 text-slate-600 marker:text-ocean-500">
                       <li>MedJet J5</li>
                     </ul>
                   <li>FDM</li>
-                    <ul className="list-[square] list-inside pl-5 text-gray-600 marker:text-blue-500">
+                    <ul className="list-[square] list-inside pl-5 text-slate-600 marker:text-ocean-500">
                       <li>Stratasys Fortus</li>
                       <li>H2S</li>
                       <li>H2D</li>
@@ -177,12 +177,12 @@ export default function Resume() {
                 </ul>
               </div>
 
-              <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                  <span className="w-8 h-1 bg-green-500 rounded-full"></span>
+              <div className="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-[0_10px_30px_rgba(3,4,94,0.05)]">
+                <h4 className="mb-4 flex items-center gap-2 text-xl font-bold text-ocean-950">
+                  <span className="h-1 w-8 rounded-full bg-amber-400"></span>
                   Software Proficiencies
                 </h4>
-                <ul className="list-disc list-inside space-y-3 text-gray-600 marker:text-green-500">
+                <ul className="list-disc list-inside space-y-3 text-slate-600 marker:text-ocean-500">
                   <li>Fusion 360</li>
                   <li>Blender</li>
                   <li>Autodesk Inventor</li>
@@ -203,17 +203,17 @@ export default function Resume() {
 
       {/* Education Section */}
       <section>
-        <h2 className="text-xl font-semibold text-gray-900 mb-6">Education</h2>
+        <h2 className="mb-6 text-xl font-semibold text-ocean-950">Education</h2>
         <div className="space-y-4">
           
           {EDUCATION.map((edu, index) => (
             <div 
               key={index} 
-              className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm transition-shadow hover:shadow-md"
+              className="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-ocean-300 hover:shadow-md"
             >
-              <h3 className="text-lg font-bold text-gray-900">{edu.degree}</h3>
-              <div className="text-gray-600">{edu.institution}</div>
-              <div className="text-sm text-gray-400 mt-1">{edu.period}</div>
+              <h3 className="text-lg font-bold text-ocean-950">{edu.degree}</h3>
+              <div className="text-slate-600">{edu.institution}</div>
+              <div className="mt-1 text-sm text-slate-400">{edu.period}</div>
             </div>
           ))}
 

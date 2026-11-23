@@ -19,14 +19,14 @@ export default function ProjectMediaPlaceholder({ stls }: { stls: string[] }) {
 
   return (
     <div className="w-full order-2 lg:order-1">
-          <div className="relative aspect-video bg-gray-100 rounded-xl overflow-hidden shadow-lg border border-gray-200 group cursor-grab active:cursor-grabbing">
+          <div className="group relative aspect-video cursor-grab overflow-hidden rounded-2xl border border-ocean-100 bg-gradient-to-br from-ocean-100/60 via-slate-50 to-white shadow-[0_16px_40px_rgba(3,4,94,0.08)] active:cursor-grabbing">
             {/* 3D Canvas Display */}
             <div className="w-full h-full relative z-0">
                <Canvas camera={{ position:[0, 0, 5], fov: 50 }}>
                  <Suspense 
                     fallback={
                       <Html center>
-                        <Loader className="animate-spin text-gray-500" size={32} />
+                        <Loader className="animate-spin text-ocean-700" size={32} />
                       </Html>
                     }
                   >
@@ -41,13 +41,13 @@ export default function ProjectMediaPlaceholder({ stls }: { stls: string[] }) {
 
             <button 
               onClick={prevSlide}
-              className="absolute z-10 left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-md"
+              className="absolute z-10 left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-ocean-950 opacity-0 shadow-md transition-opacity hover:bg-ocean-100 group-hover:opacity-100"
             >
               <ChevronLeft size={24} />
             </button>
             <button 
               onClick={nextSlide}
-              className="absolute z-10 right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-md"
+              className="absolute z-10 right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-ocean-950 opacity-0 shadow-md transition-opacity hover:bg-ocean-100 group-hover:opacity-100"
             >
               <ChevronRight size={24} />
             </button>
@@ -58,13 +58,13 @@ export default function ProjectMediaPlaceholder({ stls }: { stls: string[] }) {
                 <div 
                   key={idx} 
                   className={`w-2 h-2 rounded-full transition-all ${
-                    idx === currentSlide ? "bg-gray-800 w-4" : "bg-gray-400"
+                    idx === currentSlide ? "w-4 bg-ocean-700" : "bg-slate-400"
                   }`} 
                 />
               ))}
             </div>
           </div>
-          <p className="text-center text-sm text-gray-400 mt-2 italic">
+          <p className="mt-2 text-center text-sm italic text-slate-400">
             Snapshots from recent builds & design work (Drag to rotate)
           </p>
         </div>

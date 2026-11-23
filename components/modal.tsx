@@ -34,14 +34,14 @@ export default function Modal({ selectedProject, onClose }: ModalProps) {
     <dialog
       ref={modalRef}
       onClose={onClose}
-      className="project-modal bg-white border border-gray-200 rounded-lg shadow-lg max-h-[90vh] max-w-2xl w-[calc(100%-2rem)] p-6 overflow-y-scroll"
+      className="project-modal max-h-[90vh] w-[calc(100%-2rem)] max-w-2xl overflow-y-scroll rounded-2xl border border-ocean-100 bg-white p-6 shadow-2xl"
     >
       {selectedProject && (
         <div>
           <div className="flex justify-between items-center mb-4">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900">{selectedProject.title}</h2>
-              <div className="text-sm text-gray-500 mt-1">
+              <h2 className="text-2xl font-bold text-ocean-950">{selectedProject.title}</h2>
+              <div className="mt-1 text-sm text-slate-500">
                 {selectedProject.year} · {selectedProject.category}
               </div>
             </div>
@@ -49,7 +49,7 @@ export default function Modal({ selectedProject, onClose }: ModalProps) {
               type="button"
               onClick={() => modalRef.current?.close()}
               aria-label="Close project details"
-              className="text-gray-500 hover:text-gray-700"
+              className="text-slate-500 transition-colors hover:text-ocean-700"
             >
               <X size={24} />
             </button>
@@ -65,13 +65,13 @@ export default function Modal({ selectedProject, onClose }: ModalProps) {
             </div>
           )}
 
-          <p className="text-gray-600 mb-4">{selectedProject.description}</p>
+          <p className="mb-4 text-slate-600">{selectedProject.description}</p>
 
           <div className="flex flex-wrap gap-2 mb-4">
             {selectedProject.tech.map((technology) => (
               <span
                 key={technology}
-                className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md border border-gray-200"
+                className="rounded-md border border-ocean-100 bg-ocean-100/50 px-2 py-1 text-xs text-ocean-950"
               >
                 {technology}
               </span>

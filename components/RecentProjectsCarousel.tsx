@@ -68,8 +68,8 @@ export default function RecentProjectsCarousel({
 
           return (
             <CarouselItem key={`${project.id}-${index}`} className="pl-0">
-              <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
-                <div className="relative aspect-video bg-gray-100">
+              <div className="overflow-hidden rounded-2xl border border-ocean-100 bg-white shadow-[0_16px_40px_rgba(3,4,94,0.08)]">
+                <div className="relative aspect-video bg-gradient-to-br from-ocean-100/60 via-slate-50 to-white">
                   {isImage ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
@@ -109,7 +109,7 @@ export default function RecentProjectsCarousel({
                       href={file}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-full flex-col items-center justify-center gap-3 text-gray-500 hover:text-blue-600"
+                      className="flex h-full flex-col items-center justify-center gap-3 text-slate-500 transition-colors hover:text-ocean-700"
                     >
                       <Box aria-hidden="true" size={40} />
                       <span className="flex items-center gap-1 text-sm">
@@ -118,16 +118,16 @@ export default function RecentProjectsCarousel({
                     </a>
                   )}
                   {files.length > 1 && (
-                    <span className="absolute bottom-3 right-3 rounded-full bg-black/60 px-3 py-1 text-xs text-white">
+                    <span className="absolute bottom-3 right-3 rounded-full bg-ocean-950/80 px-3 py-1 text-xs text-white">
                       {slideIndex + 1} / {files.length}
                     </span>
                   )}
                 </div>
-                <div className="p-5">
-                  <h4 className="text-lg font-bold text-gray-900">
+                <div className="border-t border-ocean-100/70 bg-white p-5">
+                  <h4 className="text-lg font-bold text-ocean-950">
                     {project.title}
                   </h4>
-                  <p className="mt-1 text-sm text-gray-500">
+                  <p                   className="mt-1 text-sm text-slate-500">
                     {project.year} · {project.category}
                   </p>
                 </div>

@@ -22,14 +22,19 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-[80vh] animate-in fade-in slide-in-from-bottom-4 duration-700 max-w-6xl mx-auto px-4 py-12">
       
-      <div className="text-center mb-12">
-        <p className="text-xl text-gray-500 mt-4 font-semibold uppercase tracking-widest">
+      <div className="mb-12 text-center">
+        <h1 className="text-4xl font-bold tracking-tight text-ocean-950 md:text-5xl">
           Will Corson
+        </h1>
+        <p className="mt-4 inline-flex items-center gap-3 text-sm font-bold uppercase tracking-[0.3em] text-ocean-700">
+          <span className="h-px w-8 bg-ocean-300" />
+          Designer · Engineer
+          <span className="h-px w-8 bg-ocean-300" />
         </p>
       </div>
 
       <div className="flex justify-center mb-16 w-full">
-        <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-2xl ring-1 ring-gray-100">
+        <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-[0_20px_60px_rgba(3,4,94,0.16)] ring-4 ring-ocean-100">
            <img 
             src="/will.png" 
             alt="Will Corson" 
@@ -38,8 +43,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-gray-50 rounded-2xl p-8 md:p-12 mb-12">
-            <h3 className="text-3xl text-gray-900 mt-4 font-semibold uppercase tracking-widest">
+      <div className="mb-12 rounded-3xl border border-white/80 bg-white/75 p-6 shadow-[0_18px_60px_rgba(3,4,94,0.06)] backdrop-blur-sm md:p-12">
+            <h3 className="mt-4 text-3xl font-semibold uppercase tracking-widest text-ocean-950">
               Recent Projects
             </h3>
 
@@ -47,10 +52,10 @@ export default function Home() {
               <RecentProjectsCarousel projects={recentProjects} />
             </div>
 
-          <h3 className="text-3xl font-extrabold tracking-tight text-gray-500 mb-6 border-b border-gray-200 pb-4">
+          <h3 className="mb-6 border-b border-ocean-100 pb-4 text-3xl font-extrabold tracking-tight text-ocean-950">
             About Me
           </h3>
-          <div className="prose prose-lg text-gray-600 max-w-none space-y-6">
+          <div className="prose prose-lg max-w-none space-y-6 text-slate-600">
             <p>
               I am a passionate Designer/Engineer with extensive experience in 3d design and rapid prototyping. I specialize in bringing ideas into reality, 
               whether that be conceptual or fictional and adding functionality to it. I am looking for a position that will make me think creatively and challenge 
@@ -71,25 +76,25 @@ export default function Home() {
           </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 border-t border-gray-200 pt-12 pb-12">
-              <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                  <span className="w-8 h-1 bg-blue-500 rounded-full"></span>
+      <div className="mt-6 grid grid-cols-1 gap-8 border-t border-ocean-100 pt-12 pb-12 md:grid-cols-2">
+              <div className="rounded-2xl border border-ocean-100/80 bg-white/85 p-6 shadow-[0_10px_30px_rgba(3,4,94,0.05)]">
+                <h4 className="mb-4 flex items-center gap-2 text-xl font-bold text-ocean-950">
+                  <span className="h-1 w-8 rounded-full bg-ocean-500"></span>
                   Organizations
                 </h4>
-                <ul className="list-disc list-inside space-y-3 text-gray-600 marker:text-blue-500">
+                <ul className="list-disc list-inside space-y-3 text-slate-600 marker:text-ocean-500">
                   <li>President of Animation Club for 2 years, officer for 3</li>
                   <li>Relay For Life team captain 2022-2026, raised over $1000 in 2025</li>
                   <li>EnableUC Member</li>
                 </ul>
               </div>
 
-              <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                  <span className="w-8 h-1 bg-green-500 rounded-full"></span>
+              <div className="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-[0_10px_30px_rgba(3,4,94,0.05)]">
+                <h4 className="mb-4 flex items-center gap-2 text-xl font-bold text-ocean-950">
+                  <span className="h-1 w-8 rounded-full bg-amber-400"></span>
                   Activities
                 </h4>
-                <ul className="list-disc list-inside space-y-3 text-gray-600 marker:text-green-500">
+                <ul className="list-disc list-inside space-y-3 text-slate-600 marker:text-amber-500">
                   <li>Team captain for a recreational Volleyball team</li>
                   <li>Sailing</li>
                   <li>Hiking</li>
@@ -100,30 +105,30 @@ export default function Home() {
               </div>
             </div>
 
-      <div className="border-t border-gray-200 pt-12">
-        <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Get in Touch</h3>
+      <div className="border-t border-ocean-100 pt-12">
+        <h3 className="mb-8 text-center text-2xl font-bold text-ocean-950">Get in Touch</h3>
         <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-12">
           <div className="flex flex-col gap-4">
             <a 
               href="mailto:corsonwt@mail.uc.edu" 
-              className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all group"
+              className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-ocean-300 hover:shadow-lg"
             >
-              <div className="bg-blue-50 p-4 rounded-full group-hover:bg-blue-100 transition-colors">
-                <Mail className="text-blue-600 w-6 h-6" />
+              <div className="rounded-full bg-ocean-100 p-4 transition-colors group-hover:bg-ocean-300/60">
+                <Mail className="h-6 w-6 text-ocean-700" />
               </div>
               <div>
-                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">Email Me</p>
-                <p className="text-lg font-medium text-gray-900">corsonwt@mail.uc.edu</p>
+                <p className="text-sm font-semibold uppercase tracking-wider text-slate-500">Email Me</p>
+                <p className="text-lg font-medium text-ocean-950">corsonwt@mail.uc.edu</p>
               </div>
             </a>
 
-            <div className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-green-300 transition-all group cursor-default">
-              <div className="bg-green-50 p-4 rounded-full group-hover:bg-green-100 transition-colors">
-                <Phone className="text-green-600 w-6 h-6" />
+            <div className="group flex cursor-default items-center gap-4 rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm transition-all hover:border-emerald-300 hover:shadow-md">
+              <div className="rounded-full bg-emerald-50 p-4 transition-colors group-hover:bg-emerald-100">
+                <Phone className="h-6 w-6 text-emerald-700" />
               </div>
               <div>
-                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">Call Me</p>
-                <p className="text-lg font-medium text-gray-900">+1 (614) 813-6233</p>
+                <p className="text-sm font-semibold uppercase tracking-wider text-slate-500">Call Me</p>
+                <p className="text-lg font-medium text-ocean-950">+1 (614) 813-6233</p>
               </div>
             </div>
           </div>
@@ -133,13 +138,13 @@ export default function Home() {
               href="https://www.linkedin.com/in/william-corson-a16667232/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all group"
+              className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-ocean-300 hover:shadow-lg"
             >
-              <div className="bg-blue-50 p-4 rounded-full group-hover:bg-blue-100 transition-colors">
-                <Linkedin className="text-blue-600 w-6 h-6" />
+              <div className="rounded-full bg-ocean-100 p-4 transition-colors group-hover:bg-ocean-300/60">
+                <Linkedin className="h-6 w-6 text-ocean-700" />
               </div>
               <div>
-                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">LinkedIn</p>
+                <p className="text-sm font-semibold uppercase tracking-wider text-slate-500">LinkedIn</p>
               </div>
             </a>
 
@@ -147,13 +152,13 @@ export default function Home() {
               href="https://www.instagram.com/bigtimber35" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-pink-300 transition-all group"
+              className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-rose-200 hover:shadow-lg"
             >
-              <div className="bg-pink-50 p-4 rounded-full group-hover:bg-pink-100 transition-colors">
-                <Instagram className="text-pink-600 w-6 h-6" />
+              <div className="rounded-full bg-rose-50 p-4 transition-colors group-hover:bg-rose-100">
+                <Instagram className="h-6 w-6 text-rose-600" />
               </div>
               <div>
-                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider">Instagram</p>
+                <p className="text-sm font-semibold uppercase tracking-wider text-slate-500">Instagram</p>
               </div>
             </a>
           </div>
