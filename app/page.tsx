@@ -1,14 +1,11 @@
 "use client";
-import { useState } from "react";
 import {
-  Box,
   Instagram,
   Linkedin,
   Mail, 
   Phone,
 } from "lucide-react";
-import Modal from "@/components/modal";
-import type Project from "./models/project";
+import RecentProjectsCarousel from "@/components/RecentProjectsCarousel";
 import { PROJECTS } from "./models/projects";
 
 const recentProjectIds = [
@@ -22,16 +19,14 @@ const recentProjects = PROJECTS.filter((project) =>
 );
 
 export default function Home() {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
   return (
     <div className="flex flex-col min-h-[80vh] animate-in fade-in slide-in-from-bottom-4 duration-700 max-w-6xl mx-auto px-4 py-12">
       
-      {/* <div className="text-center mb-12">
+      <div className="text-center mb-12">
         <p className="text-xl text-gray-500 mt-4 font-semibold uppercase tracking-widest">
           Will Corson
         </p>
-      </div> */}
+      </div>
 
       <div className="flex justify-center mb-16 w-full">
         <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-2xl ring-1 ring-gray-100">
@@ -48,45 +43,8 @@ export default function Home() {
               Recent Projects
             </h3>
 
-            <div className="grid grid-cols-1 mb-6 sm:grid-cols-2 gap-6 mt-4">
-              {recentProjects.map((project) => {
-                const previewImage = project.displayFiles.find((file) =>
-                  /\.(jpe?g|png|gif|webp|avif|bmp)$/i.test(file)
-                );
-
-                return (
-                  <button
-                    key={project.id}
-                    type="button"
-                    onClick={() => setSelectedProject(project)}
-                    className="overflow-hidden rounded-xl border border-gray-200 bg-white text-left shadow-sm transition hover:border-blue-300 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-                  >
-                    {previewImage ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={previewImage}
-                        alt=""
-                        className="aspect-video w-full object-cover"
-                      />
-                    ) : (
-                      <div className="flex aspect-video w-full items-center justify-center bg-gray-100 text-gray-400">
-                        <Box aria-hidden="true" size={40} />
-                      </div>
-                    )}
-                    <div className="p-5">
-                      <h4 className="text-lg font-bold text-gray-900">
-                        {project.title}
-                      </h4>
-                      <p className="mt-1 text-sm text-gray-500">
-                        {project.year} · {project.category}
-                      </p>
-                      <p className="mt-3 line-clamp-3 text-sm text-gray-600">
-                        {project.description}
-                      </p>
-                    </div>
-                  </button>
-                );
-              })}
+            <div className="mt-4 mb-6">
+              <RecentProjectsCarousel projects={recentProjects} />
             </div>
 
           <h3 className="text-3xl font-extrabold tracking-tight text-gray-500 mb-6 border-b border-gray-200 pb-4">
@@ -201,10 +159,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Modal
-        selectedProject={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
     </div>
   );
 }
