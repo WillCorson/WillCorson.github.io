@@ -49,7 +49,7 @@ export default function Modal({ selectedProject, onClose }: ModalProps) {
               type="button"
               onClick={() => modalRef.current?.close()}
               aria-label="Close project details"
-              className="text-slate-500 transition-colors hover:text-ocean-700"
+              className="cursor-pointer text-slate-500 transition-colors hover:text-ocean-700"
             >
               <X size={24} />
             </button>

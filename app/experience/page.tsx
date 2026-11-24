@@ -55,7 +55,7 @@ export default function Resume() {
                     className={`pb-2 text-sm font-medium border-b-2 ${
                       activeTab === "experience"
                         ? "border-ocean-700 text-ocean-700"
-                        : "border-transparent text-slate-500 hover:text-ocean-950"
+                        : "border-transparent text-slate-500 hover:text-ocean-950 cursor-pointer "
                     }`}
                   >
                     Experience
@@ -72,7 +72,7 @@ export default function Resume() {
                     className={`pb-2 text-sm font-medium border-b-2 ${
                       activeTab === "projects"
                         ? "border-ocean-700 text-ocean-700"
-                        : "border-transparent text-slate-500 hover:text-ocean-950"
+                        : "border-transparent text-slate-500 hover:text-ocean-950 cursor-pointer"
                     }`}
                   >
                     Projects ({jobProjects.length})
@@ -124,7 +124,7 @@ export default function Resume() {
                       key={project.id}
                       type="button"
                       onClick={() => setSelectedProject(project)}
-                      className="rounded-xl border border-slate-200 bg-white/85 p-4 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-ocean-300 hover:shadow-md"
+                      className="cursor-pointer rounded-xl border border-slate-200 bg-white/85 p-4 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-ocean-300 hover:shadow-md"
                     >
                       <span className="block font-semibold text-ocean-950">{project.title}</span>
                       <span className="mt-1 block text-sm text-slate-500">

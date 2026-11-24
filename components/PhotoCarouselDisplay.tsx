@@ -29,8 +29,8 @@ export default function PhotoCarouselDisplay({ photos }: { photos: string[] }) {
         {/* Only show arrows if there's more than 1 photo */}
         {photos.length > 1 && (
           <>
-            <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2" />
+            <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2" />
           </>
         )}
       </Carousel>

@@ -67,6 +67,11 @@ export default function RecentProjectsCarousel({
           const isImage = /\.(jpe?g|png|gif|webp|avif|bmp|svg)$/i.test(extension);
           const isVideo = /\.(mp4|mov|avi|webm|ogv|m4v)$/i.test(extension);
           const isStl = extension === ".stl";
+          const slideDistance = Math.abs(slideIndex - activeSlide);
+          const isNearActiveSlide =
+            files.length > 1
+              ? Math.min(slideDistance, files.length - slideDistance) <= 1
+              : true;
 
           return (
             <CarouselItem key={`${project.id}-${index}`} className="pl-0">
@@ -78,12 +83,14 @@ export default function RecentProjectsCarousel({
                       src={file}
                       alt={`${project.title} project preview`}
                       className="h-full w-full object-contain"
+                      loading={isNearActiveSlide ? "eager" : "lazy"}
+                      decoding="async"
                     />
                   ) : isVideo ? (
                     <video
                       src={file}
                       controls
-                      preload="metadata"
+                      preload={isNearActiveSlide ? "metadata" : "none"}
                       className="h-full w-full object-contain"
                     />
                   ) : isStl ? (
@@ -140,8 +147,8 @@ export default function RecentProjectsCarousel({
       </CarouselContent>
       {files.length > 1 && (
         <>
-          <CarouselPrevious className="left-3 opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100" />
-          <CarouselNext className="right-3 opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100" />
+          <CarouselPrevious className="left-3" />
+          <CarouselNext className="right-3" />
         </>
       )}
     </Carousel>

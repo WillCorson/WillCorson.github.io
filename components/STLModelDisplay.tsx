@@ -41,13 +41,13 @@ export default function ProjectMediaPlaceholder({ stls }: { stls: string[] }) {
 
             <button 
               onClick={prevSlide}
-              className="absolute z-10 left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-ocean-950 opacity-0 shadow-md transition-opacity hover:bg-ocean-100 group-hover:opacity-100"
+              className="absolute z-10 left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-ocean-950 "
             >
               <ChevronLeft size={24} />
             </button>
             <button 
               onClick={nextSlide}
-              className="absolute z-10 right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-ocean-950 opacity-0 shadow-md transition-opacity hover:bg-ocean-100 group-hover:opacity-100"
+              className="absolute z-10 right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-ocean-950"
             >
               <ChevronRight size={24} />
             </button>
