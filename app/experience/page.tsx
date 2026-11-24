@@ -11,7 +11,7 @@ export default function Resume() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <div className="space-y-12 max-w-3xl animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <div className="mx-auto max-w-3xl space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <header>
         <h1 className="mb-2 text-3xl font-bold tracking-tight text-ocean-950">Resume</h1>
         <p className="text-slate-600">My professional journey and education, starting with the most recent.</p>

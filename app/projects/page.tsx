@@ -24,7 +24,7 @@ export default function Projects() {
   };
 
   return (
-    <div className="space-y-8 max-w-4xl animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <div className="mx-auto max-w-4xl space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="mb-2 text-3xl font-bold tracking-tight text-ocean-950">Projects</h1>
